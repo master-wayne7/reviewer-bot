@@ -1,0 +1,427 @@
+{
+  "reviews": {
+    "d:\\opensource\\reviewer-bot\\examples\\sample.go": [
+      {
+        "line": 8,
+        "function": "CalculateSum",
+        "style": "funny",
+        "review": "😄 This function is doing its best",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 13,
+        "function": "ProcessString",
+        "style": "funny",
+        "review": "🤣 It's not perfect, but it's trying",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 18,
+        "function": "ValidateEmail",
+        "style": "funny",
+        "review": "🤣 It's not perfect, but it's trying",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 23,
+        "function": "GetUserData",
+        "style": "funny",
+        "review": "😊 Simple and gets the job done",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 32,
+        "function": "ComplexCalculation",
+        "style": "funny",
+        "review": "😄 This function is doing its best",
+        "stars": "⭐⭐⭐"
+      }
+    ],
+    "d:\\opensource\\reviewer-bot\\examples\\sample.dart": [
+      {
+        "line": 4,
+        "function": "add",
+        "style": "funny",
+        "review": "😄 This function is doing its best",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 8,
+        "function": "multiply",
+        "style": "funny",
+        "review": "😊 Simple and gets the job done",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 13,
+        "function": "formatMessage",
+        "style": "funny",
+        "review": "🤣 It's not perfect, but it's trying",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 17,
+        "function": "processList",
+        "style": "funny",
+        "review": "😊 Simple and gets the job done",
+        "stars": "⭐⭐⭐"
+      }
+    ],
+    "d:\\opensource\\reviewer-bot\\examples\\sample.cpp": [],
+    "d:\\opensource\\reviewer-bot\\examples\\sample.c": [],
+    "d:\\opensource\\reviewer-bot\\examples\\sample.js": [
+      {
+        "line": 3,
+        "function": "calculateTip",
+        "style": "funny",
+        "review": "😄 This function is doing its best",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 11,
+        "function": "validateInput",
+        "style": "funny",
+        "review": "🤣 It's not perfect, but it's trying",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 19,
+        "function": "complexAlgorithm",
+        "style": "funny",
+        "review": "🤣 It's not perfect, but it's trying",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 27,
+        "function": "getUserProfile",
+        "style": "funny",
+        "review": "😊 Simple and gets the job done",
+        "stars": "⭐⭐⭐"
+      }
+    ],
+    "d:\\opensource\\reviewer-bot\\review\\generator.go": [
+      {
+        "line": 17,
+        "function": "NewGenerator",
+        "style": "roast",
+        "review": "🔥 This function needs a reality check",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 24,
+        "function": "ExtractStarRating",
+        "style": "roast",
+        "review": "🤦‍♂️ I've seen better code in a tutorial",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 51,
+        "function": "ExtractFunctionCode",
+        "style": "roast",
+        "review": "😂 At least it's not the worst code ever",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 95,
+        "function": "GenerateReviews",
+        "style": "roast",
+        "review": "🔥 This function needs a reality check",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 141,
+        "function": "generateFallbackReview",
+        "style": "roast",
+        "review": "😂 At least it's not the worst code ever",
+        "stars": "⭐⭐⭐"
+      }
+    ],
+    "d:\\opensource\\reviewer-bot\\gemini\\client.go": [
+      {
+        "line": 20,
+        "function": "NewClient",
+        "style": "funny",
+        "review": "😄 This function is doing its best",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 27,
+        "function": "GetReviewPrompt",
+        "style": "funny",
+        "review": "😄 This function is doing its best",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 64,
+        "function": "GenerateReview",
+        "style": "funny",
+        "review": "😊 Simple and gets the job done",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 103,
+        "function": "generateMockReview",
+        "style": "funny",
+        "review": "😄 This function is doing its best",
+        "stars": "⭐⭐⭐"
+      }
+    ],
+    "d:\\opensource\\reviewer-bot\\examples\\sample.py": [
+      {
+        "line": 3,
+        "function": "calculate_average",
+        "style": "funny",
+        "review": "😊 Simple and gets the job done",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 9,
+        "function": "validate_email",
+        "style": "funny",
+        "review": "😊 Simple and gets the job done",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 13,
+        "function": "process_text",
+        "style": "funny",
+        "review": "😄 This function is doing its best",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 17,
+        "function": "get_user_info",
+        "style": "funny",
+        "review": "🤣 It's not perfect, but it's trying",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 25,
+        "function": "complex_calculation",
+        "style": "funny",
+        "review": "🤣 It's not perfect, but it's trying",
+        "stars": "⭐⭐⭐"
+      }
+    ],
+    "d:\\opensource\\reviewer-bot\\src\\codeLensProvider.ts": [
+      {
+        "line": 16,
+        "function": "constructor",
+        "style": "funny",
+        "review": "😊 Simple and gets the job done",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 131,
+        "function": "switch",
+        "style": "funny",
+        "review": "😄 This function is doing its best",
+        "stars": "⭐⭐⭐"
+      }
+    ],
+    "d:\\opensource\\reviewer-bot\\main.go": [
+      {
+        "line": 20,
+        "function": "main",
+        "style": "funny",
+        "review": "🤣 It's not perfect, but it's trying",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 32,
+        "function": "processStdin",
+        "style": "funny",
+        "review": "😄 This function is doing its best",
+        "stars": "⭐⭐⭐"
+      }
+    ]
+  },
+  "history": {
+    "CalculateSum": [
+      "⭐⭐⭐⭐⭐ ⭐⭐⭐⭐⭐ Adding two numbers? Groundbreaking. 🔥😂",
+      "⭐⭐⭐ 😄 This function is doing its best"
+    ],
+    "ProcessString": [
+      "⭐⭐⭐⭐⭐ ⭐⭐⭐⭐⭐ Wow, genius! So innovative, you just reinvented toupper. 🙄🔥😂",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying"
+    ],
+    "ValidateEmail": [
+      "⭐⭐ ⭐⭐ The pinnacle of email validation! I bet it lets \"totally@legit\" through. 🔥😂",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying"
+    ],
+    "GetUserData": [
+      "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial",
+      "⭐⭐⭐ 😊 Simple and gets the job done"
+    ],
+    "ComplexCalculation": [
+      "⭐⭐⭐ 🔥 This function needs a reality check",
+      "⭐⭐⭐ 😄 This function is doing its best"
+    ],
+    "add": [
+      "⭐⭐⭐ 🔥 This function needs a reality check",
+      "⭐⭐⭐ 🔥 This function needs a reality check",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best"
+    ],
+    "multiply": [
+      "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial",
+      "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done"
+    ],
+    "formatMessage": [
+      "⭐⭐⭐ 😂 At least it's not the worst code ever",
+      "⭐⭐⭐ 😂 At least it's not the worst code ever",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying"
+    ],
+    "processList": [
+      "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial",
+      "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done"
+    ],
+    "calculateTip": [
+      "⭐⭐⭐ 🔥 This function needs a reality check",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best"
+    ],
+    "validateInput": [
+      "⭐⭐⭐ 😂 At least it's not the worst code ever",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying"
+    ],
+    "complexAlgorithm": [
+      "⭐⭐⭐ 😂 At least it's not the worst code ever",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying"
+    ],
+    "getUserProfile": [
+      "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done"
+    ],
+    "NewGenerator": [
+      "⭐⭐⭐ 🔥 This function needs a reality check",
+      "⭐⭐⭐ 🔥 This function needs a reality check",
+      "⭐⭐⭐ 🔥 This function needs a reality check"
+    ],
+    "ExtractStarRating": [
+      "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial",
+      "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial",
+      "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial"
+    ],
+    "ExtractFunctionCode": [
+      "⭐⭐⭐ 😂 At least it's not the worst code ever",
+      "⭐⭐⭐ 😂 At least it's not the worst code ever",
+      "⭐⭐⭐ 😂 At least it's not the worst code ever"
+    ],
+    "GenerateReviews": [
+      "⭐⭐⭐ 🔥 This function needs a reality check",
+      "⭐⭐⭐ 🔥 This function needs a reality check",
+      "⭐⭐⭐ 🔥 This function needs a reality check"
+    ],
+    "generateFallbackReview": [
+      "⭐⭐⭐ 😂 At least it's not the worst code ever",
+      "⭐⭐⭐ 😂 At least it's not the worst code ever",
+      "⭐⭐⭐ 😂 At least it's not the worst code ever"
+    ],
+    "NewClient": [
+      "⭐⭐⭐ 🔥 This function needs a reality check",
+      "⭐⭐⭐ 🔥 This function needs a reality check",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best"
+    ],
+    "GetReviewPrompt": [
+      "⭐⭐⭐ 🔥 This function needs a reality check",
+      "⭐⭐⭐ 🔥 This function needs a reality check",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best"
+    ],
+    "GenerateReview": [
+      "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial",
+      "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done"
+    ],
+    "generateMockReview": [
+      "⭐⭐⭐ 🔥 This function needs a reality check",
+      "⭐⭐⭐ 🔥 This function needs a reality check",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best"
+    ],
+    "calculate_average": [
+      "⭐⭐⭐ 😊 Simple and gets the job done"
+    ],
+    "validate_email": [
+      "⭐⭐⭐ 😊 Simple and gets the job done"
+    ],
+    "process_text": [
+      "⭐⭐⭐ 😄 This function is doing its best"
+    ],
+    "get_user_info": [
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying"
+    ],
+    "complex_calculation": [
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying"
+    ],
+    "constructor": [
+      "⭐⭐⭐ 😊 Simple and gets the job done"
+    ],
+    "switch": [
+      "⭐⭐⭐ 😄 This function is doing its best"
+    ],
+    "main": [
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying"
+    ],
+    "processStdin": [
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best"
+    ]
+  }
+}

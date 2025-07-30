@@ -1,0 +1,120 @@
+{
+    "name": "reviewer-bot",
+    "displayName": "ReviewerBot",
+    "description": "AI-powered code reviews with style! Generate one-liner reviews above function definitions using Gemini 2.0 Flash.",
+    "version": "0.1.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/master-wayne7/reviewer-bot.git"
+    },
+    "engines": {
+        "vscode": "^1.74.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:reviewer-bot.generateReviews",
+        "onCommand:reviewer-bot.clearReviews",
+        "onCommand:reviewer-bot.setApiKey",
+        "onCommand:reviewer-bot.clearApiKey",
+        "onCommand:reviewer-bot.showReviewHistory",
+        "onCommand:reviewer-bot.showConfig"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "reviewer-bot.generateReviews",
+                "title": "ReviewerBot: Generate Reviews",
+                "category": "ReviewerBot"
+            },
+            {
+                "command": "reviewer-bot.clearReviews",
+                "title": "ReviewerBot: Clear Reviews",
+                "category": "ReviewerBot"
+            },
+            {
+                "command": "reviewer-bot.showReviewHistory",
+                "title": "ReviewerBot: Show Review History",
+                "category": "ReviewerBot"
+            },
+            {
+                "command": "reviewer-bot.setApiKey",
+                "title": "ReviewerBot: Set Gemini API Key",
+                "category": "ReviewerBot"
+            },
+            {
+                "command": "reviewer-bot.clearApiKey",
+                "title": "ReviewerBot: Clear Gemini API Key",
+                "category": "ReviewerBot"
+            },
+            {
+                "command": "reviewer-bot.showConfig",
+                "title": "ReviewerBot: Show Current Configuration",
+                "category": "ReviewerBot"
+            }
+        ],
+        "configuration": {
+            "title": "ReviewerBot",
+            "properties": {
+                "reviewerBot.apiKey": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Gemini API Key for generating reviews"
+                },
+                "reviewerBot.reviewStyle": {
+                    "type": "string",
+                    "enum": [
+                        "funny",
+                        "roast",
+                        "motivational",
+                        "technical",
+                        "hilarious"
+                    ],
+                    "default": "funny",
+                    "description": "Style of reviews to generate"
+                },
+                "reviewerBot.autoGenerateOnSave": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Automatically generate reviews when saving files"
+                },
+                "reviewerBot.enabledLanguages": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "default": [
+                        "go",
+                        "javascript",
+                        "typescript",
+                        "python",
+                        "c",
+                        "cpp",
+                        "dart",
+                        "java"
+                    ],
+                    "description": "Programming languages to generate reviews for"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.74.0",
+        "@types/node": "16.x",
+        "@typescript-eslint/eslint-plugin": "^6.0.0",
+        "@typescript-eslint/parser": "^6.0.0",
+        "eslint": "^8.0.0",
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {}
+}
