@@ -41,36 +41,36 @@
       {
         "line": 2,
         "function": "add",
-        "style": "funny",
-        "review": "So revolutionary, it adds! 🤯 What will they think of next?",
+        "style": "hilarious",
+        "review": "This add function is so revolutionary, it adds numbers! 🎭🤪 Groundbreaking!",
         "stars": "⭐⭐⭐⭐⭐"
       },
       {
         "line": 6,
         "function": "multiply",
-        "style": "funny",
-        "review": "It multiplies... numbers! Groundbreaking, but needs more flair. 💅",
-        "stars": "⭐⭐⭐⭐"
+        "style": "hilarious",
+        "review": "This code is so brilliant, it multiplies numbers like a squirrel hoarding nuts...of KNOWLEDGE! 🤪",
+        "stars": "⭐⭐⭐⭐⭐"
       },
       {
         "line": 11,
         "function": "formatMessage",
-        "style": "funny",
-        "review": "Adds \"Message:\" before your message. Peak originality! 🙄",
-        "stars": "⭐⭐⭐"
+        "style": "hilarious",
+        "review": "Oh, the drama! This function is so extra, it needs its own reality show! 🎭",
+        "stars": "⭐⭐⭐⭐⭐"
       },
       {
         "line": 15,
         "function": "processList",
-        "style": "funny",
-        "review": "Prints numbers. Exciting as watching paint dry! 😴",
-        "stars": "⭐⭐"
+        "style": "hilarious",
+        "review": "Prints each number; truly groundbreaking tech, worthy of a 🎭 award! 🤪",
+        "stars": "⭐⭐⭐⭐⭐"
       },
       {
         "line": 21,
         "function": "asyncOperation",
-        "style": "funny",
-        "review": "Makes you wait a whole SECOND. My grandma's faster! 👵",
+        "style": "hilarious",
+        "review": "🤡 Clowning around with code!",
         "stars": "⭐⭐⭐"
       }
     ],
@@ -219,37 +219,58 @@
       {
         "line": 3,
         "function": "calculate_average",
-        "style": "funny",
-        "review": "Averages are like opinions, everyone's got one! (and this function nails it!) 💯",
-        "stars": "⭐⭐⭐⭐⭐"
+        "style": "hilarious",
+        "review": "🤡 Clowning around with code!",
+        "stars": "⭐⭐⭐"
       },
       {
         "line": 9,
         "function": "validate_email",
-        "style": "funny",
-        "review": "\"Good enough\" is its motto. 🤣 Probably lets \"iamtotallyarobot@scam.biz\" through.",
+        "style": "hilarious",
+        "review": "This \"validation\" is so bad, it's basically an email free-for-all! 🤪🎭",
         "stars": "⭐⭐"
       },
       {
         "line": 13,
         "function": "process_text",
-        "style": "funny",
-        "review": "I guess it's okay if you like your text bland and lowercase. 😴",
-        "stars": "⭐⭐⭐"
+        "style": "hilarious",
+        "review": "Wow, it's like cleaning the Mona Lisa with a wet wipe and calling it art! 🎭",
+        "stars": "⭐⭐⭐⭐⭐"
       },
       {
         "line": 17,
         "function": "get_user_info",
-        "style": "funny",
-        "review": "This function knows only Alice. 🤷‍♀️ Poor Alice, forever 25.",
-        "stars": "⭐"
+        "style": "hilarious",
+        "review": "🎭 Drama in the codebase!",
+        "stars": "⭐⭐⭐"
       },
       {
         "line": 25,
         "function": "complex_calculation",
-        "style": "funny",
-        "review": "This is as complex as my taxes! 🤦‍♀️ Send help... and a real math problem.",
-        "stars": "⭐⭐"
+        "style": "hilarious",
+        "review": "🎭 Drama in the codebase!",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 30,
+        "function": "__init__",
+        "style": "hilarious",
+        "review": "🤡 Clowning around with code!",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 34,
+        "function": "add",
+        "style": "hilarious",
+        "review": "🤪 This function is a character!",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 37,
+        "function": "subtract",
+        "style": "hilarious",
+        "review": "🤡 Clowning around with code!",
+        "stars": "⭐⭐⭐"
       }
     ],
     "d:\\opensource\\reviewer-bot\\src\\codeLensProvider.ts": [
@@ -290,64 +311,64 @@
         "line": 37,
         "function": "ParseFunctions",
         "style": "hilarious",
-        "review": "🤡 Clowning around with code!",
-        "stars": "⭐⭐⭐"
+        "review": "This code is so good, it's practically sentient! 🎭 It writes *itself* now! 🤪",
+        "stars": "⭐⭐⭐⭐⭐"
       },
       {
         "line": 64,
         "function": "ParseFunctions",
         "style": "hilarious",
-        "review": "🤡 Clowning around with code!",
-        "stars": "⭐⭐⭐"
+        "review": "This code parses functions like I parse my feelings: deeply flawed but hilariously executed 🎭🤪",
+        "stars": "⭐⭐⭐⭐⭐"
       },
       {
         "line": 107,
         "function": "ParseFunctions",
         "style": "hilarious",
-        "review": "🤡 Clowning around with code!",
-        "stars": "⭐⭐⭐"
+        "review": "I'm def having a function party! 🤪 Regex so hot it could melt Guido van Rossum's brain! 🎭",
+        "stars": "⭐⭐⭐⭐"
       },
       {
         "line": 133,
         "function": "ParseFunctions",
         "style": "hilarious",
-        "review": "🤡 Clowning around with code!",
+        "review": "This code parses functions? More like parses MY SANITY 🎭🤪!",
         "stars": "⭐⭐⭐"
       },
       {
         "line": 159,
         "function": "ParseFunctions",
         "style": "hilarious",
-        "review": "🤡 Clowning around with code!",
-        "stars": "⭐⭐⭐"
+        "review": "This function parses functions like I parse my emotions: with a regex and denial! 🎭🤪",
+        "stars": "⭐⭐⭐⭐"
       },
       {
         "line": 186,
         "function": "ParseFunctions",
         "style": "hilarious",
-        "review": "🤡 Clowning around with code!",
+        "review": "✨✨ This function's so good, it makes my CPU do the tango! 🤪💃",
         "stars": "⭐⭐⭐"
       },
       {
         "line": 242,
         "function": "ParseFunctions",
         "style": "hilarious",
-        "review": "🤡 Clowning around with code!",
+        "review": "The parser's crafting functions like a caffeinated squirrel on a type system tightrope! 🤪",
         "stars": "⭐⭐⭐"
       },
       {
         "line": 268,
         "function": "GetParser",
         "style": "hilarious",
-        "review": "🤪 This function is a character!",
-        "stars": "⭐⭐⭐"
+        "review": "The code's so smart, it's practically sentient...ly deciding what parser to use! 🤪",
+        "stars": "⭐⭐⭐⭐"
       },
       {
         "line": 287,
         "function": "ParseFile",
         "style": "hilarious",
-        "review": "🤪 This function is a character!",
-        "stars": "⭐⭐⭐"
+        "review": "This function is so good, it single-handedly fixed my crippling fear of semicolons! 🤪",
+        "stars": "⭐⭐⭐⭐⭐"
       }
     ],
     "d:\\opensource\\reviewer-bot\\src\\backendClient.ts": [
@@ -355,7 +376,7 @@
         "line": 11,
         "function": "constructor",
         "style": "hilarious",
-        "review": "The `reviewer-bot.exe` is poised like a stage actor ready to steal the show! 🎭🤪",
+        "review": "The `reviewer-bot.exe` backend path? 🎭 Is this Skynet initializing?! 🤪",
         "stars": "⭐⭐⭐⭐"
       }
     ],
@@ -364,21 +385,21 @@
         "line": 112,
         "function": "clearReviewsCommand",
         "style": "funny",
-        "review": "Clears reviews like I clear my browser history after ordering pizza at work. 🍕🙈",
+        "review": "Clears reviews like my browser history after \"accidentally\" visiting questionable sites! 🙈",
         "stars": "⭐⭐⭐⭐"
       },
       {
         "line": 123,
         "function": "showReviewHistoryCommand",
         "style": "funny",
-        "review": "Showing the past! Like that ex I shouldn't text...but maybe will? 🤔😬",
+        "review": "Gets my review history, but can it find my missing sock? Asking the *real* questions! 🧦",
         "stars": "⭐⭐⭐"
       },
       {
         "line": 156,
         "function": "showConfigCommand",
         "style": "funny",
-        "review": "Exposing config? Hope it's not like exposing my search history! 🫣🔍",
+        "review": "Shows my config... which is more organized than my actual life. 😅 Thank goodness!",
         "stars": "⭐⭐⭐⭐"
       }
     ],
@@ -525,7 +546,10 @@
       "⭐⭐⭐ 🤪 This function is a character!",
       "⭐⭐⭐ 🤪 This function is a character!",
       "⭐⭐⭐ 🤪 This function is a character!",
-      "⭐⭐⭐⭐⭐ So revolutionary, it adds! 🤯 What will they think of next?"
+      "⭐⭐⭐⭐⭐ So revolutionary, it adds! 🤯 What will they think of next?",
+      "⭐⭐⭐⭐⭐ This function's so brilliant, it's practically adding sprinkles to my soul! 🤪",
+      "⭐⭐⭐⭐⭐ This add function is so revolutionary, it adds numbers! 🎭🤪 Groundbreaking!",
+      "⭐⭐⭐ 🤪 This function is a character!"
     ],
     "multiply": [
       "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial",
@@ -539,7 +563,9 @@
       "⭐⭐⭐ 🤡 Clowning around with code!",
       "⭐⭐⭐ 🤡 Clowning around with code!",
       "⭐⭐⭐ 🤡 Clowning around with code!",
-      "⭐⭐⭐⭐ It multiplies... numbers! Groundbreaking, but needs more flair. 💅"
+      "⭐⭐⭐⭐ It multiplies... numbers! Groundbreaking, but needs more flair. 💅",
+      "⭐⭐⭐⭐⭐ This code is so mind-blowingly good, it's practically multiplying universes! 🤪✨",
+      "⭐⭐⭐⭐⭐ This code is so brilliant, it multiplies numbers like a squirrel hoarding nuts...of KNOWLEDGE! 🤪"
     ],
     "formatMessage": [
       "⭐⭐⭐ 😂 At least it's not the worst code ever",
@@ -563,7 +589,9 @@
       "⭐⭐⭐ 🎭 Drama in the codebase!",
       "⭐⭐⭐ 🎭 Drama in the codebase!",
       "⭐⭐⭐ 🎭 Drama in the codebase!",
-      "⭐⭐⭐ Adds \"Message:\" before your message. Peak originality! 🙄"
+      "⭐⭐⭐ Adds \"Message:\" before your message. Peak originality! 🙄",
+      "⭐⭐⭐⭐⭐ This code is so good, it's practically sentient! It knows the message and formats it! 🎭🤪",
+      "⭐⭐⭐⭐⭐ Oh, the drama! This function is so extra, it needs its own reality show! 🎭"
     ],
     "processList": [
       "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial",
@@ -578,7 +606,9 @@
       "⭐⭐⭐ 🤡 Clowning around with code!",
       "⭐⭐⭐ 🤡 Clowning around with code!",
       "⭐⭐⭐ 🤡 Clowning around with code!",
-      "⭐⭐ Prints numbers. Exciting as watching paint dry! 😴"
+      "⭐⭐ Prints numbers. Exciting as watching paint dry! 😴",
+      "⭐⭐⭐⭐⭐ Prints numbers like it's auditioning for a one-man show on stdout! 🎭 Bravo!",
+      "⭐⭐⭐⭐⭐ Prints each number; truly groundbreaking tech, worthy of a 🎭 award! 🤪"
     ],
     "calculateTip": [
       "⭐⭐⭐ 🔥 This function needs a reality check",
@@ -765,7 +795,8 @@
       "⭐⭐⭐ 🤡 Clowning around with code!",
       "⭐⭐⭐ 🤡 Clowning around with code!",
       "⭐⭐⭐ 🤡 Clowning around with code!",
-      "⭐⭐⭐⭐⭐ Averages are like opinions, everyone's got one! (and this function nails it!) 💯"
+      "⭐⭐⭐⭐⭐ Averages are like opinions, everyone's got one! (and this function nails it!) 💯",
+      "⭐⭐⭐ 🤡 Clowning around with code!"
     ],
     "validate_email": [
       "⭐⭐⭐ 😊 Simple and gets the job done",
@@ -776,7 +807,8 @@
       "⭐⭐⭐ 🤡 Clowning around with code!",
       "⭐⭐⭐ 🤡 Clowning around with code!",
       "⭐⭐⭐ 🤡 Clowning around with code!",
-      "⭐⭐ \"Good enough\" is its motto. 🤣 Probably lets \"iamtotallyarobot@scam.biz\" through."
+      "⭐⭐ \"Good enough\" is its motto. 🤣 Probably lets \"iamtotallyarobot@scam.biz\" through.",
+      "⭐⭐ This \"validation\" is so bad, it's basically an email free-for-all! 🤪🎭"
     ],
     "process_text": [
       "⭐⭐⭐ 😄 This function is doing its best",
@@ -787,7 +819,8 @@
       "⭐⭐⭐ 🤪 This function is a character!",
       "⭐⭐⭐ 🤪 This function is a character!",
       "⭐⭐⭐ 🤪 This function is a character!",
-      "⭐⭐⭐ I guess it's okay if you like your text bland and lowercase. 😴"
+      "⭐⭐⭐ I guess it's okay if you like your text bland and lowercase. 😴",
+      "⭐⭐⭐⭐⭐ Wow, it's like cleaning the Mona Lisa with a wet wipe and calling it art! 🎭"
     ],
     "get_user_info": [
       "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
@@ -798,7 +831,8 @@
       "⭐⭐⭐ 🎭 Drama in the codebase!",
       "⭐⭐⭐ 🎭 Drama in the codebase!",
       "⭐⭐⭐ 🎭 Drama in the codebase!",
-      "⭐ This function knows only Alice. 🤷‍♀️ Poor Alice, forever 25."
+      "⭐ This function knows only Alice. 🤷‍♀️ Poor Alice, forever 25.",
+      "⭐⭐⭐ 🎭 Drama in the codebase!"
     ],
     "complex_calculation": [
       "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
@@ -809,7 +843,8 @@
       "⭐⭐⭐ 🎭 Drama in the codebase!",
       "⭐⭐⭐ 🎭 Drama in the codebase!",
       "⭐⭐⭐ 🎭 Drama in the codebase!",
-      "⭐⭐ This is as complex as my taxes! 🤦‍♀️ Send help... and a real math problem."
+      "⭐⭐ This is as complex as my taxes! 🤦‍♀️ Send help... and a real math problem.",
+      "⭐⭐⭐ 🎭 Drama in the codebase!"
     ],
     "constructor": [
       "⭐⭐⭐ 😊 Simple and gets the job done",
@@ -844,7 +879,9 @@
       "⭐⭐⭐⭐ It's ALIVE! Building stuff, like Frankenstein, but hopefully less monstrous. 🤖",
       "⭐⭐⭐⭐ Ugh, another constructor. At least it loads something! 😴",
       "⭐⭐⭐ This constructor is so basic, it's practically wearing cargo shorts. 🩳",
-      "⭐⭐⭐⭐ The `reviewer-bot.exe` is poised like a stage actor ready to steal the show! 🎭🤪"
+      "⭐⭐⭐⭐ The `reviewer-bot.exe` is poised like a stage actor ready to steal the show! 🎭🤪",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐⭐ The `reviewer-bot.exe` backend path? 🎭 Is this Skynet initializing?! 🤪"
     ],
     "switch": [
       "⭐⭐⭐ 😄 This function is doing its best",
@@ -974,7 +1011,14 @@
       "⭐⭐⭐ 🤡 Clowning around with code!",
       "⭐⭐⭐ 🤡 Clowning around with code!",
       "⭐⭐⭐ 🤡 Clowning around with code!",
-      "⭐⭐⭐ 🤡 Clowning around with code!"
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐⭐⭐ This code is so good, it's practically sentient! 🎭 It writes *itself* now! 🤪",
+      "⭐⭐⭐⭐⭐ This code parses functions like I parse my feelings: deeply flawed but hilariously executed 🎭🤪",
+      "⭐⭐⭐⭐ I'm def having a function party! 🤪 Regex so hot it could melt Guido van Rossum's brain! 🎭",
+      "⭐⭐⭐ This code parses functions? More like parses MY SANITY 🎭🤪!",
+      "⭐⭐⭐⭐ This function parses functions like I parse my emotions: with a regex and denial! 🎭🤪",
+      "⭐⭐⭐ ✨✨ This function's so good, it makes my CPU do the tango! 🤪💃",
+      "⭐⭐⭐ The parser's crafting functions like a caffeinated squirrel on a type system tightrope! 🤪"
     ],
     "GetParser": [
       "⭐⭐⭐⭐ It's like a file extension piñata! 🎉 But JS is the default? 🤨🤣",
@@ -988,7 +1032,8 @@
       "⭐⭐⭐ 🤪 This function is a character!",
       "⭐⭐⭐ 🤪 This function is a character!",
       "⭐⭐⭐ 🤪 This function is a character!",
-      "⭐⭐⭐ 🤪 This function is a character!"
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐⭐ The code's so smart, it's practically sentient...ly deciding what parser to use! 🤪"
     ],
     "ParseFile": [
       "⭐⭐⭐ 😄 This function is doing its best",
@@ -1002,7 +1047,8 @@
       "⭐⭐⭐ 🤪 This function is a character!",
       "⭐⭐⭐ 🤪 This function is a character!",
       "⭐⭐⭐ 🤪 This function is a character!",
-      "⭐⭐⭐ 🤪 This function is a character!"
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐⭐⭐ This function is so good, it single-handedly fixed my crippling fear of semicolons! 🤪"
     ],
     "generateSingleReview": [
       "⭐⭐⭐⭐ The fallback review is like saying \"I tried\" after the code exploded 🤣.",
@@ -1056,7 +1102,9 @@
       "⭐⭐⭐ 🤡 Clowning around with code!",
       "⭐⭐⭐ 🤡 Clowning around with code!",
       "⭐⭐⭐ 🤡 Clowning around with code!",
-      "⭐⭐⭐ Makes you wait a whole SECOND. My grandma's faster! 👵"
+      "⭐⭐⭐ Makes you wait a whole SECOND. My grandma's faster! 👵",
+      "⭐⭐⭐⭐⭐ This code is so async, it probably waits in line for coffee before even *thinking* about brewing it. 🤪",
+      "⭐⭐⭐ 🤡 Clowning around with code!"
     ],
     "getData": [
       "⭐⭐⭐ 🎭 Drama in the codebase!",
@@ -1113,17 +1161,29 @@
     "clearReviewsCommand": [
       "⭐⭐⭐ Clears reviews like my browser history after ordering too much pizza 🍕.",
       "⭐⭐⭐⭐ ✨ Poof! Gone! Like my motivation on a Monday morning. 💨",
-      "⭐⭐⭐⭐ Clears reviews like I clear my browser history after ordering pizza at work. 🍕🙈"
+      "⭐⭐⭐⭐ Clears reviews like I clear my browser history after ordering pizza at work. 🍕🙈",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐⭐ Clears reviews like my browser history after \"accidentally\" visiting questionable sites! 🙈"
     ],
     "showReviewHistoryCommand": [
       "⭐⭐⭐⭐ Shows review history, proving I *did* tell you to fix that bug! 📜",
       "⭐⭐⭐ Nothing to see here...unless you like watching grass grow. 😴",
-      "⭐⭐⭐ Showing the past! Like that ex I shouldn't text...but maybe will? 🤔😬"
+      "⭐⭐⭐ Showing the past! Like that ex I shouldn't text...but maybe will? 🤔😬",
+      "⭐⭐⭐⭐ This function is so good, it's practically a historical reenactment! 🎭🤪",
+      "⭐⭐⭐ Gets my review history, but can it find my missing sock? Asking the *real* questions! 🧦"
     ],
     "showConfigCommand": [
       "⭐⭐ Exposes config like I expose my questionable coding choices on Fridays 🙈.",
       "⭐⭐⭐⭐ 📜 Config deets! Finally, I know what I'm supposed to do! Maybe. 🤔",
-      "⭐⭐⭐⭐ Exposing config? Hope it's not like exposing my search history! 🫣🔍"
+      "⭐⭐⭐⭐ Exposing config? Hope it's not like exposing my search history! 🫣🔍",
+      "⭐⭐⭐⭐⭐ This config is so insightful, it's practically Shakespearean! 🎭 I'm not worthy! 🤪",
+      "⭐⭐⭐⭐ Shows my config... which is more organized than my actual life. 😅 Thank goodness!"
+    ],
+    "__init__": [
+      "⭐⭐⭐ 🤡 Clowning around with code!"
+    ],
+    "subtract": [
+      "⭐⭐⭐ 🤡 Clowning around with code!"
     ]
   }
 }

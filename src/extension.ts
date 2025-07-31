@@ -85,9 +85,9 @@ async function generateReviewsForDocument(document: vscode.TextDocument) {
             // Debug: Log the response structure
             console.log('Backend response:', JSON.stringify(reviewsResponse, null, 2));
             
-            if (reviewsResponse.Reviews && reviewsResponse.Reviews.length > 0) {
-                codeLensProvider.setReviews(document.fileName, reviewsResponse.Reviews);
-                vscode.window.showInformationMessage(`Generated ${reviewsResponse.Reviews.length} reviews!`);
+            if (reviewsResponse.reviews && reviewsResponse.reviews.length > 0) {
+                codeLensProvider.setReviews(document.fileName, reviewsResponse.reviews);
+                vscode.window.showInformationMessage(`Generated ${reviewsResponse.reviews.length} reviews!`);
             } else {
                 vscode.window.showInformationMessage('No functions found to review.');
             }

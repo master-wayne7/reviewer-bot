@@ -100,10 +100,10 @@ export class BackendClient {
                         return;
                     }
                     
-                    // Ensure Reviews field exists
-                    if (!response.Reviews) {
-                        console.warn('Go backend response missing Reviews field:', response);
-                        response.Reviews = [];
+                    // Ensure reviews field exists
+                    if (!response.reviews) {
+                        console.warn('Go backend response missing reviews field:', response);
+                        response.reviews = [];
                     }
                     
                     resolve(response);

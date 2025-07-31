@@ -14,7 +14,7 @@ export interface ReviewRequest {
 
 export interface ReviewResponse {
     file: string;
-    Reviews: Review[];
+    reviews: Review[];
 }
 
 export interface ErrorResponse {
