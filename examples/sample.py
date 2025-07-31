@@ -26,3 +26,13 @@ def complex_calculation(x, y, z):
     """Perform complex mathematical operations."""
     result = (x ** 2 + y ** 2) / z
     return abs(result) 
+class ComplexClass:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def add(self, other):
+        return ComplexClass(self.x + other.x, self.y + other.y)
+    
+    def subtract(self, other):
+        return ComplexClass(self.x - other.x, self.y - other.y)

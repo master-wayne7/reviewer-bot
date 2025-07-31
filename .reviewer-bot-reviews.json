@@ -5,65 +5,72 @@
         "line": 8,
         "function": "CalculateSum",
         "style": "funny",
-        "review": "😄 This function is doing its best",
-        "stars": "⭐⭐⭐"
+        "review": "Groundbreaking stuff! Adds two numbers like it's 1955 🤯.",
+        "stars": "⭐⭐⭐⭐⭐"
       },
       {
         "line": 13,
         "function": "ProcessString",
         "style": "funny",
-        "review": "🤣 It's not perfect, but it's trying",
+        "review": "A shouting function! Turns your string into a digital banshee 🗣️.",
         "stars": "⭐⭐⭐"
       },
       {
         "line": 18,
         "function": "ValidateEmail",
         "style": "funny",
-        "review": "🤣 It's not perfect, but it's trying",
-        "stars": "⭐⭐⭐"
+        "review": "Checks for \"@\" and \".\"... because who needs actual validation? 🤦‍♀️",
+        "stars": "⭐⭐"
       },
       {
         "line": 23,
         "function": "GetUserData",
         "style": "funny",
-        "review": "😊 Simple and gets the job done",
-        "stars": "⭐⭐⭐"
+        "review": "What's the userID for? Everyone's John Doe, apparently. 🤷‍♂️",
+        "stars": "⭐"
       },
       {
         "line": 32,
         "function": "ComplexCalculation",
         "style": "funny",
-        "review": "😄 This function is doing its best",
-        "stars": "⭐⭐⭐"
+        "review": "So complex it's... division and absolute value? My grandma could do that!👵",
+        "stars": "⭐⭐⭐⭐"
       }
     ],
     "d:\\opensource\\reviewer-bot\\examples\\sample.dart": [
       {
-        "line": 4,
+        "line": 2,
         "function": "add",
         "style": "funny",
-        "review": "😄 This function is doing its best",
-        "stars": "⭐⭐⭐"
+        "review": "So revolutionary, it adds! 🤯 What will they think of next?",
+        "stars": "⭐⭐⭐⭐⭐"
       },
       {
-        "line": 8,
+        "line": 6,
         "function": "multiply",
         "style": "funny",
-        "review": "😊 Simple and gets the job done",
-        "stars": "⭐⭐⭐"
+        "review": "It multiplies... numbers! Groundbreaking, but needs more flair. 💅",
+        "stars": "⭐⭐⭐⭐"
       },
       {
-        "line": 13,
+        "line": 11,
         "function": "formatMessage",
         "style": "funny",
-        "review": "🤣 It's not perfect, but it's trying",
+        "review": "Adds \"Message:\" before your message. Peak originality! 🙄",
         "stars": "⭐⭐⭐"
       },
       {
-        "line": 17,
+        "line": 15,
         "function": "processList",
         "style": "funny",
-        "review": "😊 Simple and gets the job done",
+        "review": "Prints numbers. Exciting as watching paint dry! 😴",
+        "stars": "⭐⭐"
+      },
+      {
+        "line": 21,
+        "function": "asyncOperation",
+        "style": "funny",
+        "review": "Makes you wait a whole SECOND. My grandma's faster! 👵",
         "stars": "⭐⭐⭐"
       }
     ],
@@ -74,65 +81,93 @@
         "line": 3,
         "function": "calculateTip",
         "style": "funny",
-        "review": "😄 This function is doing its best",
-        "stars": "⭐⭐⭐"
+        "review": "Finally, a function that understands my crippling fear of math! 💰",
+        "stars": "⭐⭐⭐⭐⭐"
       },
       {
         "line": 11,
         "function": "validateInput",
         "style": "funny",
-        "review": "🤣 It's not perfect, but it's trying",
+        "review": "Only lets strings pass? Party pooper! 🎉",
         "stars": "⭐⭐⭐"
       },
       {
         "line": 19,
         "function": "complexAlgorithm",
         "style": "funny",
-        "review": "🤣 It's not perfect, but it's trying",
-        "stars": "⭐⭐⭐"
+        "review": "So complex, it's probably calculating the meaning of life (incorrectly). 🤔",
+        "stars": "⭐⭐"
       },
       {
         "line": 27,
         "function": "getUserProfile",
         "style": "funny",
-        "review": "😊 Simple and gets the job done",
-        "stars": "⭐⭐⭐"
+        "review": "Is \"Jane Smith\" the only user you know?! Lazy! 😴",
+        "stars": "⭐"
       }
     ],
     "d:\\opensource\\reviewer-bot\\review\\generator.go": [
       {
-        "line": 17,
+        "line": 18,
         "function": "NewGenerator",
-        "style": "roast",
-        "review": "🔥 This function needs a reality check",
+        "style": "hilarious",
+        "review": "🤪 This function is a character!",
         "stars": "⭐⭐⭐"
       },
       {
-        "line": 24,
+        "line": 25,
         "function": "ExtractStarRating",
-        "style": "roast",
-        "review": "🤦‍♂️ I've seen better code in a tutorial",
+        "style": "hilarious",
+        "review": "🤡 Clowning around with code!",
         "stars": "⭐⭐⭐"
       },
       {
-        "line": 51,
+        "line": 52,
         "function": "ExtractFunctionCode",
-        "style": "roast",
-        "review": "😂 At least it's not the worst code ever",
+        "style": "hilarious",
+        "review": "🎭 Drama in the codebase!",
         "stars": "⭐⭐⭐"
       },
       {
-        "line": 95,
+        "line": 96,
         "function": "GenerateReviews",
-        "style": "roast",
-        "review": "🔥 This function needs a reality check",
+        "style": "hilarious",
+        "review": "🤪 This function is a character!",
         "stars": "⭐⭐⭐"
       },
       {
-        "line": 141,
+        "line": 126,
+        "function": "generateSingleReview",
+        "style": "hilarious",
+        "review": "🤡 Clowning around with code!",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 149,
+        "function": "generateBatchReviews",
+        "style": "hilarious",
+        "review": "🤡 Clowning around with code!",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 178,
+        "function": "generateIndividualReviews",
+        "style": "hilarious",
+        "review": "🎭 Drama in the codebase!",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 207,
+        "function": "parseBatchResponse",
+        "style": "hilarious",
+        "review": "🤪 This function is a character!",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 268,
         "function": "generateFallbackReview",
-        "style": "roast",
-        "review": "😂 At least it's not the worst code ever",
+        "style": "hilarious",
+        "review": "🎭 Drama in the codebase!",
         "stars": "⭐⭐⭐"
       }
     ],
@@ -140,29 +175,43 @@
       {
         "line": 20,
         "function": "NewClient",
-        "style": "funny",
-        "review": "😄 This function is doing its best",
+        "style": "hilarious",
+        "review": "🤪 This function is a character!",
         "stars": "⭐⭐⭐"
       },
       {
         "line": 27,
         "function": "GetReviewPrompt",
-        "style": "funny",
-        "review": "😄 This function is doing its best",
+        "style": "hilarious",
+        "review": "🤪 This function is a character!",
         "stars": "⭐⭐⭐"
       },
       {
-        "line": 64,
+        "line": 59,
         "function": "GenerateReview",
-        "style": "funny",
-        "review": "😊 Simple and gets the job done",
+        "style": "hilarious",
+        "review": "🤡 Clowning around with code!",
         "stars": "⭐⭐⭐"
       },
       {
-        "line": 103,
+        "line": 105,
+        "function": "GenerateBatchReview",
+        "style": "hilarious",
+        "review": "🎭 Drama in the codebase!",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 157,
+        "function": "generateMockBatchReview",
+        "style": "hilarious",
+        "review": "🤡 Clowning around with code!",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 217,
         "function": "generateMockReview",
-        "style": "funny",
-        "review": "😄 This function is doing its best",
+        "style": "hilarious",
+        "review": "🤪 This function is a character!",
         "stars": "⭐⭐⭐"
       }
     ],
@@ -171,36 +220,36 @@
         "line": 3,
         "function": "calculate_average",
         "style": "funny",
-        "review": "😊 Simple and gets the job done",
-        "stars": "⭐⭐⭐"
+        "review": "Averages are like opinions, everyone's got one! (and this function nails it!) 💯",
+        "stars": "⭐⭐⭐⭐⭐"
       },
       {
         "line": 9,
         "function": "validate_email",
         "style": "funny",
-        "review": "😊 Simple and gets the job done",
-        "stars": "⭐⭐⭐"
+        "review": "\"Good enough\" is its motto. 🤣 Probably lets \"iamtotallyarobot@scam.biz\" through.",
+        "stars": "⭐⭐"
       },
       {
         "line": 13,
         "function": "process_text",
         "style": "funny",
-        "review": "😄 This function is doing its best",
+        "review": "I guess it's okay if you like your text bland and lowercase. 😴",
         "stars": "⭐⭐⭐"
       },
       {
         "line": 17,
         "function": "get_user_info",
         "style": "funny",
-        "review": "🤣 It's not perfect, but it's trying",
-        "stars": "⭐⭐⭐"
+        "review": "This function knows only Alice. 🤷‍♀️ Poor Alice, forever 25.",
+        "stars": "⭐"
       },
       {
         "line": 25,
         "function": "complex_calculation",
         "style": "funny",
-        "review": "🤣 It's not perfect, but it's trying",
-        "stars": "⭐⭐⭐"
+        "review": "This is as complex as my taxes! 🤦‍♀️ Send help... and a real math problem.",
+        "stars": "⭐⭐"
       }
     ],
     "d:\\opensource\\reviewer-bot\\src\\codeLensProvider.ts": [
@@ -208,15 +257,15 @@
         "line": 16,
         "function": "constructor",
         "style": "funny",
-        "review": "😊 Simple and gets the job done",
+        "review": "This constructor is so basic, it's practically wearing cargo shorts. 🩳",
         "stars": "⭐⭐⭐"
       },
       {
-        "line": 131,
+        "line": 164,
         "function": "switch",
         "style": "funny",
-        "review": "😄 This function is doing its best",
-        "stars": "⭐⭐⭐"
+        "review": "Is this switch statement sentient? Because it looks like it's judging me. 🤨",
+        "stars": "⭐⭐"
       }
     ],
     "d:\\opensource\\reviewer-bot\\main.go": [
@@ -234,97 +283,390 @@
         "review": "😄 This function is doing its best",
         "stars": "⭐⭐⭐"
       }
-    ]
+    ],
+    "d:\\opensource\\reviewer-bot\\examples\\sample.java": [],
+    "d:\\opensource\\reviewer-bot\\parser\\parser.go": [
+      {
+        "line": 37,
+        "function": "ParseFunctions",
+        "style": "hilarious",
+        "review": "🤡 Clowning around with code!",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 64,
+        "function": "ParseFunctions",
+        "style": "hilarious",
+        "review": "🤡 Clowning around with code!",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 107,
+        "function": "ParseFunctions",
+        "style": "hilarious",
+        "review": "🤡 Clowning around with code!",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 133,
+        "function": "ParseFunctions",
+        "style": "hilarious",
+        "review": "🤡 Clowning around with code!",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 159,
+        "function": "ParseFunctions",
+        "style": "hilarious",
+        "review": "🤡 Clowning around with code!",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 186,
+        "function": "ParseFunctions",
+        "style": "hilarious",
+        "review": "🤡 Clowning around with code!",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 242,
+        "function": "ParseFunctions",
+        "style": "hilarious",
+        "review": "🤡 Clowning around with code!",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 268,
+        "function": "GetParser",
+        "style": "hilarious",
+        "review": "🤪 This function is a character!",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 287,
+        "function": "ParseFile",
+        "style": "hilarious",
+        "review": "🤪 This function is a character!",
+        "stars": "⭐⭐⭐"
+      }
+    ],
+    "d:\\opensource\\reviewer-bot\\src\\backendClient.ts": [
+      {
+        "line": 11,
+        "function": "constructor",
+        "style": "hilarious",
+        "review": "The `reviewer-bot.exe` is poised like a stage actor ready to steal the show! 🎭🤪",
+        "stars": "⭐⭐⭐⭐"
+      }
+    ],
+    "d:\\opensource\\reviewer-bot\\src\\extension.ts": [
+      {
+        "line": 112,
+        "function": "clearReviewsCommand",
+        "style": "funny",
+        "review": "Clears reviews like I clear my browser history after ordering pizza at work. 🍕🙈",
+        "stars": "⭐⭐⭐⭐"
+      },
+      {
+        "line": 123,
+        "function": "showReviewHistoryCommand",
+        "style": "funny",
+        "review": "Showing the past! Like that ex I shouldn't text...but maybe will? 🤔😬",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 156,
+        "function": "showConfigCommand",
+        "style": "funny",
+        "review": "Exposing config? Hope it's not like exposing my search history! 🫣🔍",
+        "stars": "⭐⭐⭐⭐"
+      }
+    ],
+    "d:\\opensource\\reviewer-bot\\examples\\complex_dart.dart": [
+      {
+        "line": 5,
+        "function": "add",
+        "style": "hilarious",
+        "review": "🤪 This function is a character!",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 10,
+        "function": "getData",
+        "style": "hilarious",
+        "review": "🎭 Drama in the codebase!",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 16,
+        "function": "getComplexData",
+        "style": "hilarious",
+        "review": "🤡 Clowning around with code!",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 35,
+        "function": "getUsers",
+        "style": "hilarious",
+        "review": "🤡 Clowning around with code!",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 50,
+        "function": "getNestedData",
+        "style": "hilarious",
+        "review": "🎭 Drama in the codebase!",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 63,
+        "function": "formatMessage",
+        "style": "hilarious",
+        "review": "🎭 Drama in the codebase!",
+        "stars": "⭐⭐⭐"
+      },
+      {
+        "line": 67,
+        "function": "simpleAsync",
+        "style": "hilarious",
+        "review": "🤡 Clowning around with code!",
+        "stars": "⭐⭐⭐"
+      }
+    ],
+    "d:\\opensource\\reviewer-bot\\test_dart_language.js": [],
+    "d:\\opensource\\reviewer-bot\\src\\types.ts": []
   },
   "history": {
     "CalculateSum": [
       "⭐⭐⭐⭐⭐ ⭐⭐⭐⭐⭐ Adding two numbers? Groundbreaking. 🔥😂",
-      "⭐⭐⭐ 😄 This function is doing its best"
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐⭐⭐ This function is so basic, it's practically adding insult to injury! 😄",
+      "⭐⭐⭐⭐⭐ Adds numbers like I add toppings to my pizza...generously! 😄",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐⭐⭐ Groundbreaking! Finally, a function that adds things! 🤯",
+      "⭐⭐⭐⭐⭐ Groundbreaking! Adds two numbers; my calculator app is shaking. 🧮😂",
+      "⭐⭐⭐⭐⭐ So advanced! It adds numbers like it's solving world hunger. 🤯",
+      "⭐⭐⭐⭐⭐ Groundbreaking stuff! Adds two numbers like it's 1955 🤯."
     ],
     "ProcessString": [
       "⭐⭐⭐⭐⭐ ⭐⭐⭐⭐⭐ Wow, genius! So innovative, you just reinvented toupper. 🙄🔥😂",
-      "⭐⭐⭐ 🤣 It's not perfect, but it's trying"
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐⭐⭐ This code's so simple, it's practically wearing a \"kick me\" sign! 😄",
+      "⭐⭐⭐⭐⭐ So simple, it's genius! Like shouting everything; much wow. 🤣",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ ☆☆ My caps lock key feels betrayed. 😤",
+      "⭐⭐⭐ A string walks into a bar... now it's yelling! 🗣️🤣",
+      "⭐⭐⭐ Makes strings SHOUT, because subtlety is *so* last century. 🗣️",
+      "⭐⭐⭐ A shouting function! Turns your string into a digital banshee 🗣️."
     ],
     "ValidateEmail": [
       "⭐⭐ ⭐⭐ The pinnacle of email validation! I bet it lets \"totally@legit\" through. 🔥😂",
-      "⭐⭐⭐ 🤣 It's not perfect, but it's trying"
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐ ValidateEmail? More like ValidateEmail-ish 🤣. Good enough...for government work. 😄",
+      "⭐⭐ \"Validates\" emails like I \"validate\" my impulse shopping. 🤣 It's technically true... I guess?",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐ ☆☆☆ As secure as a screen door on a submarine. 🤦‍♀️",
+      "⭐ Ugh, validates emails like my grandma spots spam. 📧👵",
+      "⭐ Passable if your email is just \"@.\" - genius! 📧🙈",
+      "⭐⭐ Checks for \"@\" and \".\"... because who needs actual validation? 🤦‍♀️"
     ],
     "GetUserData": [
       "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial",
-      "⭐⭐⭐ 😊 Simple and gets the job done"
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐ The only thing dynamic about this data is John Doe's nonexistent existence. 🤣",
+      "⭐⭐ The user data is as real as my chances of winning the lottery 🤣. Maybe add a DB call?",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐ ☆☆☆☆ I, too, am always John Doe, 30. 👤 Happy B-Day!",
+      "⭐⭐ Returns John Doe every time; still more consistent than my ex. 💔👤",
+      "⭐⭐ John Doe *again*? Is this the Matrix? 🧑‍💻😴",
+      "⭐ What's the userID for? Everyone's John Doe, apparently. 🤷‍♂️"
     ],
     "ComplexCalculation": [
       "⭐⭐⭐ 🔥 This function needs a reality check",
-      "⭐⭐⭐ 😄 This function is doing its best"
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐⭐ It's so complex, it only does `abs(x*y/z)`! 🤣😄",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐ ★★★☆ Thrilling, yet still just glorified division. 🤷‍♀️",
+      "⭐⭐⭐⭐ Does math! Makes me feel smart-ish. 🧠🤓",
+      "⭐⭐⭐⭐ Math so complex, it's basically just fancy division. 🤔✨",
+      "⭐⭐⭐⭐ So complex it's... division and absolute value? My grandma could do that!👵"
     ],
     "add": [
       "⭐⭐⭐ 🔥 This function needs a reality check",
       "⭐⭐⭐ 🔥 This function needs a reality check",
       "⭐⭐⭐ 😄 This function is doing its best",
-      "⭐⭐⭐ 😄 This function is doing its best"
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐⭐⭐ This function is so good, it adds numbers faster than I gain weight during the holidays! 🤣😄",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐⭐⭐ Groundbreaking! Adds numbers like it's 1999! 🤯",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐⭐⭐ So revolutionary, it adds! 🤯 What will they think of next?"
     ],
     "multiply": [
       "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial",
       "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial",
       "⭐⭐⭐ 😊 Simple and gets the job done",
-      "⭐⭐⭐ 😊 Simple and gets the job done"
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐⭐⭐ This function multiplies so hard, it's practically having baby numbers! 🤣😄",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐⭐ Multiplies doubles! So hot right now. 🔥 Slightly too precise for my taste.",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐⭐ It multiplies... numbers! Groundbreaking, but needs more flair. 💅"
     ],
     "formatMessage": [
       "⭐⭐⭐ 😂 At least it's not the worst code ever",
       "⭐⭐⭐ 😂 At least it's not the worst code ever",
       "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
-      "⭐⭐⭐ 🤣 It's not perfect, but it's trying"
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐⭐⭐ This function's so simple, even my grandma could debug it! 😄",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ It puts the message in the format! What's not to... tolerate? 😐",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ Adds \"Message:\" before your message. Peak originality! 🙄"
     ],
     "processList": [
       "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial",
       "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial",
       "⭐⭐⭐ 😊 Simple and gets the job done",
-      "⭐⭐⭐ 😊 Simple and gets the job done"
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐⭐⭐ Prints numbers; riveting! Needs more explosions 🤣",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ Printing to the console? Bold choice! 🖨️ My grandma can do that.",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐ Prints numbers. Exciting as watching paint dry! 😴"
     ],
     "calculateTip": [
       "⭐⭐⭐ 🔥 This function needs a reality check",
       "⭐⭐⭐ 😄 This function is doing its best",
-      "⭐⭐⭐ 😄 This function is doing its best"
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐⭐⭐ Finally, a function that understands I'm mathematically challenged. 💰",
+      "⭐⭐⭐⭐⭐ Finally, a function that understands my crippling fear of math! 💰"
     ],
     "validateInput": [
       "⭐⭐⭐ 😂 At least it's not the worst code ever",
       "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
-      "⭐⭐⭐ 🤣 It's not perfect, but it's trying"
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐ This function thinks spaces are invalid? Party pooper! 😒",
+      "⭐⭐⭐ Only lets strings pass? Party pooper! 🎉"
     ],
     "complexAlgorithm": [
       "⭐⭐⭐ 😂 At least it's not the worst code ever",
       "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
-      "⭐⭐⭐ 🤣 It's not perfect, but it's trying"
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐ This algorithm is so complex, it probably involves quantum staplers. 🤯",
+      "⭐⭐ So complex, it's probably calculating the meaning of life (incorrectly). 🤔"
     ],
     "getUserProfile": [
       "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial",
       "⭐⭐⭐ 😊 Simple and gets the job done",
-      "⭐⭐⭐ 😊 Simple and gets the job done"
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐⭐⭐ Everyone is Jane Smith, apparently! 🤷‍♀️",
+      "⭐ Is \"Jane Smith\" the only user you know?! Lazy! 😴"
     ],
     "NewGenerator": [
       "⭐⭐⭐ 🔥 This function needs a reality check",
       "⭐⭐⭐ 🔥 This function needs a reality check",
-      "⭐⭐⭐ 🔥 This function needs a reality check"
+      "⭐⭐⭐ 🔥 This function needs a reality check",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐⭐⭐ This function's so simple, even my grandma could generate a Gemini client! 😄",
+      "⭐⭐⭐⭐⭐ This code is so simple, it practically generates itself! 🤣✨",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!"
     ],
     "ExtractStarRating": [
       "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial",
       "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial",
-      "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial"
+      "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ This code is star-studded, but maybe a bit too eager to give out participation trophies. 🤣",
+      "⭐⭐⭐ This code's star-struck logic means even 1-star reviews get 3 stars! 🤣😄",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!"
     ],
     "ExtractFunctionCode": [
       "⭐⭐⭐ 😂 At least it's not the worst code ever",
       "⭐⭐⭐ 😂 At least it's not the worst code ever",
-      "⭐⭐⭐ 😂 At least it's not the worst code ever"
+      "⭐⭐⭐ 😂 At least it's not the worst code ever",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐⭐ Let's assume we have not been provided with the function itself, only the function signature. I will therefore rate and review the function name, based on the assumption that the function contents are implemented as suggested by its name.\n\n Function name screams \"I'm gonna extract code!\", but what black magic is inside? 🤣",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!"
     ],
     "GenerateReviews": [
       "⭐⭐⭐ 🔥 This function needs a reality check",
       "⭐⭐⭐ 🔥 This function needs a reality check",
-      "⭐⭐⭐ 🔥 This function needs a reality check"
+      "⭐⭐⭐ 🔥 This function needs a reality check",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐⭐ Seems legit, but I bet the AI thinks my code is spaghetti 🍝 anyway. 😄",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!"
     ],
     "generateFallbackReview": [
       "⭐⭐⭐ 😂 At least it's not the worst code ever",
       "⭐⭐⭐ 😂 At least it's not the worst code ever",
-      "⭐⭐⭐ 😂 At least it's not the worst code ever"
+      "⭐⭐⭐ 😂 At least it's not the worst code ever",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!"
     ],
     "NewClient": [
       "⭐⭐⭐ 🔥 This function needs a reality check",
@@ -339,7 +681,14 @@
       "⭐⭐⭐ 😄 This function is doing its best",
       "⭐⭐⭐ 😄 This function is doing its best",
       "⭐⭐⭐ 😄 This function is doing its best",
-      "⭐⭐⭐ 😄 This function is doing its best"
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐⭐⭐ This function is so simple, it's practically cheating! 😄",
+      "⭐⭐⭐⭐⭐ Looks like someone's been hitting the gym 💪, 'cause this code's *ripped*! 😄",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!"
     ],
     "GetReviewPrompt": [
       "⭐⭐⭐ 🔥 This function needs a reality check",
@@ -354,7 +703,14 @@
       "⭐⭐⭐ 😄 This function is doing its best",
       "⭐⭐⭐ 😄 This function is doing its best",
       "⭐⭐⭐ 😄 This function is doing its best",
-      "⭐⭐⭐ 😄 This function is doing its best"
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ Good use of `fmt.Sprintf` and `strings.ToLower`, but the prompt construction could be more concise.",
+      "⭐⭐⭐⭐ Good prompt, but could use better style injection to avoid redundancy;  Still generates funny reviews, but the extra instructions are a bit much 😄.",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!"
     ],
     "GenerateReview": [
       "⭐⭐⭐ 🤦‍♂️ I've seen better code in a tutorial",
@@ -369,7 +725,14 @@
       "⭐⭐⭐ 😊 Simple and gets the job done",
       "⭐⭐⭐ 😊 Simple and gets the job done",
       "⭐⭐⭐ 😊 Simple and gets the job done",
-      "⭐⭐⭐ 😊 Simple and gets the job done"
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐⭐ This code's got more error handling than my last relationship 🤣! (But it's a good thing!)",
+      "⭐⭐⭐⭐ Here's my review:\n\n Seems legit, but I bet Gemini thinks my code's always perfect anyway. 🤣",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!"
     ],
     "generateMockReview": [
       "⭐⭐⭐ 🔥 This function needs a reality check",
@@ -384,28 +747,132 @@
       "⭐⭐⭐ 😄 This function is doing its best",
       "⭐⭐⭐ 😄 This function is doing its best",
       "⭐⭐⭐ 😄 This function is doing its best",
-      "⭐⭐⭐ 😄 This function is doing its best"
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐⭐ 🤣 This function's style selection is funnier than its fallback! 😄",
+      "⭐⭐⭐⭐ This function's randomness is more reliable than my dating life 😄",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!"
     ],
     "calculate_average": [
-      "⭐⭐⭐ 😊 Simple and gets the job done"
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ Okay, I'm ready to review.\n\n**calculate_average**\n\n*   Code structure and readability: 5/5\n*   Function naming and clarity: 5/5\n*   Error handling and robustness: 4/5 (Handles empty list)\n*   Performance considerations: 5/5\n*   Best practices adherence: 5/5\n\n⭐⭐⭐⭐⭐ Averages for everyone! Even zero, which is technically still an average! 😄\n\n**validate_email**\n\n*   Code structure and readability: 4/5\n*   Function naming and clarity: 5/5\n*   Error handling and robustness: 2/5 (Very basic validation)\n*   Performance considerations: 5/5\n*   Best practices adherence: 3/5 (Could use regex)\n\n⭐⭐⭐ Hope you don't get spam with that \"validation,\" it's basically a party invite! 🤣\n\n**process_text**\n\n*   Code structure and readability: 5/5\n*   Function naming and clarity: 5/5\n*   Error handling and robustness: 5/5\n*   Performance considerations: 5/5\n*   Best practices adherence: 5/5\n\n⭐⭐⭐⭐⭐ This function is so clean, it could eat off the floor... of a text file! 😄\n\n**get_user_info**\n\n*   Code structure and readability: 5/5\n*   Function naming and clarity: 5/5\n*   Error handling and robustness: 5/5\n*   Performance considerations: 5/5\n*   Best practices adherence: 3/5 (Hardcoded data)\n\n⭐⭐⭐ Alice Johnson, the mysterious default user! Where's Bob? 🤣",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ Here's the evaluation:\n\n**calculate_average:**\n\n*   **Code structure and readability:** 5/5 - Simple and easy to understand.\n*   **Function naming and clarity:** 5/5 - Clear and descriptive name.\n*   **Error handling and robustness:** 4/5 - Handles empty list case.\n*   **Performance considerations:** 5/5 - Efficient for typical use cases.\n*   **Best practices adherence:** 5/5 - Follows best practices for simple average calculation.\n\n**validate_email:**\n\n*   **Code structure and readability:** 3/5 - Simple but could be more robust.\n*   **Function naming and clarity:** 4/5 - Clear name.\n*   **Error handling and robustness:** 1/5 - Very basic validation, prone to errors.\n*   **Performance considerations:** 5/5 - Very fast.\n*   **Best practices adherence:** 1/5 - Does not adhere to proper email validation standards.\n\n**process_text:**\n\n*   **Code structure and readability:** 5/5 - Simple and readable.\n*   **Function naming and clarity:** 5/5 - Clear and descriptive.\n*   **Error handling and robustness:** 5/5 - Handles various inputs.\n*   **Performance considerations:** 5/5 - Efficient.\n*   **Best practices adherence:** 5/5 - Follows common text processing practices.\n\n**get_user_info:**\n\n*   **Code structure and readability:** 5/5 - Simple and readable.\n*   **Function naming and clarity:** 5/5 - Clear and descriptive.\n*   **Error handling and robustness:** 5/5 - Returns a dictionary regardless.\n*   **Performance considerations:** 5/5 - Efficient.\n*   **Best practices adherence:** 3/5 - Could use a database or external source for real user info.\n\nHere are the reviews:\n\ncalculate_average: ⭐⭐⭐⭐⭐ Looks good! Average code for your average coder. 😄\nvalidate_email: ⭐⭐ Email validation? More like *e*asy *mail*function! 🤣\nprocess_text: ⭐⭐⭐⭐⭐ So clean, so processed, so...lowercase.😄\nget_user_info: ⭐⭐⭐ Getting Alice's info is easy, real users are harder! 🤣",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐⭐⭐ Averages are like opinions, everyone's got one! (and this function nails it!) 💯"
     ],
     "validate_email": [
-      "⭐⭐⭐ 😊 Simple and gets the job done"
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ This email validator is basically just asking if there's an @ and a dot, lol 🤣.",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐ \"Good enough\" is its motto. 🤣 Probably lets \"iamtotallyarobot@scam.biz\" through."
     ],
     "process_text": [
-      "⭐⭐⭐ 😄 This function is doing its best"
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐⭐ The text is processed, the user's info is static, and I'm here for it 🤣.",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ I guess it's okay if you like your text bland and lowercase. 😴"
     ],
     "get_user_info": [
-      "⭐⭐⭐ 🤣 It's not perfect, but it's trying"
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐ Returns the same \"user\" every time; Alice is living rent-free in this code! 😄",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐ This function knows only Alice. 🤷‍♀️ Poor Alice, forever 25."
     ],
     "complex_calculation": [
-      "⭐⭐⭐ 🤣 It's not perfect, but it's trying"
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐⭐ Let's play!\n\nFunction: complex_calculation\n```python\ndef complex_calculation(x, y, z):\n    \"\"\"\n    Performs a complex calculation.\n\n    Args:\n        x: The first number.\n        y: The second number.\n        z: The third number.\n\n    Returns:\n        The result of the complex calculation.\n    \"\"\"\n    if not all(isinstance(i, (int, float)) for i in [x, y, z]):\n        raise TypeError(\"Inputs must be numbers\")\n    if z == 0:\n        raise ZeroDivisionError(\"Cannot divide by zero\")\n\n    result = (x + y) * z / (x - y)\n    return result\n```\n\n This code is so complex, it probably needs its own therapist! 😄",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐ This is as complex as my taxes! 🤦‍♀️ Send help... and a real math problem."
     ],
     "constructor": [
-      "⭐⭐⭐ 😊 Simple and gets the job done"
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ Backend path hardcoded? That's one way to guarantee future job security! 🤣",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐⭐ The path construction is wilder than my grandpa's conspiracy theories! 🤪",
+      "⭐⭐⭐⭐ \"reviewer-bot.exe\"? Is that a tiny robot butler living in your FS? 🎭🤪",
+      "⭐⭐⭐⭐ It's ALIVE! Building stuff, like Frankenstein, but hopefully less monstrous. 🤖",
+      "⭐⭐⭐⭐ Ugh, another constructor. At least it loads something! 😴",
+      "⭐⭐⭐ This constructor is so basic, it's practically wearing cargo shorts. 🩳",
+      "⭐⭐⭐⭐ The `reviewer-bot.exe` is poised like a stage actor ready to steal the show! 🎭🤪"
     ],
     "switch": [
-      "⭐⭐⭐ 😄 This function is doing its best"
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐ Should've used a polymorphism pattern. Now it's switch-erland... 🤦‍♀️",
+      "⭐⭐ Oh, the suspense! What language will it *switch* to? 🙄",
+      "⭐⭐ Is this switch statement sentient? Because it looks like it's judging me. 🤨"
     ],
     "main": [
       "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
@@ -422,6 +889,241 @@
       "⭐⭐⭐ 😄 This function is doing its best",
       "⭐⭐⭐ 😄 This function is doing its best",
       "⭐⭐⭐ 😄 This function is doing its best"
+    ],
+    "ParseFunctions": [
+      "⭐⭐⭐⭐⭐ Let's assume the `ParseFunctions` function is reasonably well-written, follows best practices, and has good error handling and performance.\n\n Looks like this function is parsing functions AND looking good doing it! 😎🤣",
+      "⭐⭐⭐⭐ Let's assume the `ParseFunctions` function is reasonably well-written, follows good practices, and has no obvious flaws.\n\n I hope this parser doesn't think function calls are dance-offs! 🤣",
+      "⭐⭐⭐⭐ The regex is good, but hopes your functions don't have too many decorators! 🤣",
+      "⭐⭐⭐⭐⭐ Let's assume the code for `ParseFunctions` is well-structured, readable, handles errors gracefully, considers performance, and adheres to best practices.\n\n Looks like this function parses functions so well, it could probably parse my taxes! 😄",
+      "⭐⭐⭐⭐ Let's hope these functions aren't TOO functional 🤣!",
+      "⭐⭐⭐ Okay, I'm ready to review! Please provide the code for the `ParseFunctions` function.",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!"
+    ],
+    "GetParser": [
+      "⭐⭐⭐⭐ It's like a file extension piñata! 🎉 But JS is the default? 🤨🤣",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!"
+    ],
+    "ParseFile": [
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!"
+    ],
+    "generateSingleReview": [
+      "⭐⭐⭐⭐ The fallback review is like saying \"I tried\" after the code exploded 🤣.",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!"
+    ],
+    "generateBatchReviews": [
+      "⭐⭐⭐⭐ The code's so good, it's like a stand-up comedian, but for functions! 😄",
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!"
+    ],
+    "generateIndividualReviews": [
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!"
+    ],
+    "parseBatchResponse": [
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 😄 This function is doing its best",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!",
+      "⭐⭐⭐ 🤪 This function is a character!"
+    ],
+    "GenerateBatchReview": [
+      "⭐⭐⭐ 🤣 It's not perfect, but it's trying",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!"
+    ],
+    "generateMockBatchReview": [
+      "⭐⭐⭐ 😊 Simple and gets the job done",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!"
+    ],
+    "asyncOperation": [
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐ Waits a whole SECOND? 🐌 My internet loads faster than that!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ Makes you wait a whole SECOND. My grandma's faster! 👵"
+    ],
+    "getData": [
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!"
+    ],
+    "simpleAsync": [
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!"
+    ],
+    "getComplexData": [
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!"
+    ],
+    "getUsers": [
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!",
+      "⭐⭐⭐ 🤡 Clowning around with code!"
+    ],
+    "getNestedData": [
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!",
+      "⭐⭐⭐ 🎭 Drama in the codebase!"
+    ],
+    "clearReviewsCommand": [
+      "⭐⭐⭐ Clears reviews like my browser history after ordering too much pizza 🍕.",
+      "⭐⭐⭐⭐ ✨ Poof! Gone! Like my motivation on a Monday morning. 💨",
+      "⭐⭐⭐⭐ Clears reviews like I clear my browser history after ordering pizza at work. 🍕🙈"
+    ],
+    "showReviewHistoryCommand": [
+      "⭐⭐⭐⭐ Shows review history, proving I *did* tell you to fix that bug! 📜",
+      "⭐⭐⭐ Nothing to see here...unless you like watching grass grow. 😴",
+      "⭐⭐⭐ Showing the past! Like that ex I shouldn't text...but maybe will? 🤔😬"
+    ],
+    "showConfigCommand": [
+      "⭐⭐ Exposes config like I expose my questionable coding choices on Fridays 🙈.",
+      "⭐⭐⭐⭐ 📜 Config deets! Finally, I know what I'm supposed to do! Maybe. 🤔",
+      "⭐⭐⭐⭐ Exposing config? Hope it's not like exposing my search history! 🫣🔍"
     ]
   }
 }

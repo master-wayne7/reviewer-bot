@@ -33,16 +33,11 @@ Code:
 
 Style: %s
 
-First, rate the code quality from 1-5 stars based on:
-- Code structure and readability
-- Function naming and clarity
-- Error handling and robustness
-- Performance considerations
-- Best practices adherence
+Rate the code quality from 1-5 stars and provide ONLY a one-liner review (max 100 characters) that matches the style. Include appropriate emojis.
 
-Then provide ONLY a one-liner review (max 100 characters) that matches the style. Include appropriate emojis. Do not include quotes or formatting.
+Format your response as: "⭐⭐⭐⭐⭐ Review text here" (use 1-5 stars based on quality)
 
-Format your response as: "⭐⭐⭐⭐⭐ Review text here" (use 1-5 stars based on quality)`, functionName, functionCode, style)
+IMPORTANT: Do not include detailed scoring, analysis, or explanations. Just the star rating and review text.`, functionName, functionCode, style)
 
 	switch strings.ToLower(style) {
 	case "roast":
@@ -88,7 +83,14 @@ func (c *Client) GenerateReview(functionName, functionCode, style string) (strin
 	)
 
 	if err != nil {
-		return "", fmt.Errorf("failed to generate content: %v", err)
+		// Check for specific error types
+		if strings.Contains(err.Error(), "429") || strings.Contains(err.Error(), "quota") {
+			return "", fmt.Errorf("API quota exceeded. Please check your Gemini API plan or try again later. Error: %v", err)
+		}
+		if strings.Contains(err.Error(), "401") || strings.Contains(err.Error(), "unauthorized") {
+			return "", fmt.Errorf("Invalid API key. Please check your Gemini API key. Error: %v", err)
+		}
+		return "", fmt.Errorf("Gemini API error: %v", err)
 	}
 
 	if result.Text() == "" {
@@ -97,6 +99,118 @@ func (c *Client) GenerateReview(functionName, functionCode, style string) (strin
 
 	review := strings.TrimSpace(result.Text())
 	return review, nil
+}
+
+// GenerateBatchReview generates reviews for multiple functions in a single API call
+func (c *Client) GenerateBatchReview(batchPrompt, style string) (string, error) {
+	// Check if we're in mock mode or if no API key is provided
+	if os.Getenv("MOCK_MODE") == "true" || c.APIKey == "" {
+		return c.generateMockBatchReview(style), nil
+	}
+
+	// Initialize the client if not already done
+	if c.client == nil {
+		ctx := context.Background()
+		client, err := genai.NewClient(ctx, &genai.ClientConfig{APIKey: c.APIKey, Backend: genai.BackendGeminiAPI})
+		if err != nil {
+			return "", fmt.Errorf("failed to create Gemini client: %v", err)
+		}
+		c.client = client
+	}
+
+	prompt := fmt.Sprintf(`%s
+
+Style: %s
+
+Rate each function from 1-5 stars and provide ONLY one-liner reviews (max 100 characters each) that match the style. Include appropriate emojis.
+
+IMPORTANT: Do not include detailed scoring, analysis, or explanations. Just the star rating and review text for each function.`, batchPrompt, style)
+
+	ctx := context.Background()
+	result, err := c.client.Models.GenerateContent(
+		ctx,
+		"gemini-2.0-flash-exp",
+		genai.Text(prompt),
+		nil,
+	)
+
+	if err != nil {
+		// Check for specific error types
+		if strings.Contains(err.Error(), "429") || strings.Contains(err.Error(), "quota") {
+			return "", fmt.Errorf("API quota exceeded. Please check your Gemini API plan or try again later. Error: %v", err)
+		}
+		if strings.Contains(err.Error(), "401") || strings.Contains(err.Error(), "unauthorized") {
+			return "", fmt.Errorf("Invalid API key. Please check your Gemini API key. Error: %v", err)
+		}
+		return "", fmt.Errorf("Gemini API error: %v", err)
+	}
+
+	if result.Text() == "" {
+		return "", fmt.Errorf("no response from Gemini API")
+	}
+
+	review := strings.TrimSpace(result.Text())
+	return review, nil
+}
+
+// generateMockBatchReview generates mock batch reviews
+func (c *Client) generateMockBatchReview(style string) string {
+	mockReviews := map[string][]string{
+		"funny": {
+			"😄 This function is doing its best!",
+			"🤣 Well, it's not the worst thing I've seen today",
+			"😊 Simple and effective - like a good dad joke",
+			"🎯 Gets the job done, no questions asked!",
+			"🚀 This function is going places!",
+		},
+		"roast": {
+			"🔥 This function needs a reality check!",
+			"😂 At least it's not the worst code ever!",
+			"🤦‍♂️ I've seen better code in a tutorial!",
+			"💀 This function is barely alive!",
+			"🤡 Clown code that somehow works!",
+		},
+		"motivational": {
+			"💪 You're doing great! This function rocks!",
+			"⭐ Keep up the excellent work!",
+			"🚀 This function is going places!",
+			"🌟 You're making progress!",
+			"🎯 Every function counts!",
+		},
+		"technical": {
+			"🔧 Well-structured and efficient",
+			"📊 Good separation of concerns",
+			"⚡ Performance looks optimized",
+			"🎯 Clean and maintainable",
+			"📈 Scalable design pattern",
+		},
+		"hilarious": {
+			"🤪 This function is so wild, it needs a leash!",
+			"🎭 Drama queen of functions right here!",
+			"🤡 Clown code that somehow works!",
+			"🎪 Welcome to the circus!",
+			"🎨 Picasso would be proud!",
+		},
+	}
+
+	reviews, exists := mockReviews[strings.ToLower(style)]
+	if !exists {
+		reviews = mockReviews["funny"]
+	}
+
+	// Generate multiple mock reviews with generic function names
+	var result strings.Builder
+	for i, review := range reviews {
+		starCount := rand.Intn(3) + 3 // 3-5 stars
+		stars := ""
+		for j := 0; j < starCount; j++ {
+			stars += "⭐"
+		}
+		// Use generic function names that will be replaced by actual names
+		result.WriteString(fmt.Sprintf("Function%d: %s %s\n", i+1, stars, review))
+	}
+
+	return result.String()
 }
 
 // generateMockReview generates a mock review for testing

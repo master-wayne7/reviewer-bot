@@ -2,210 +2,168 @@ import * as vscode from 'vscode';
 import { BackendClient } from './backendClient';
 import { ReviewCodeLensProvider } from './codeLensProvider';
 
+let codeLensProvider: ReviewCodeLensProvider;
+let backendClient: BackendClient;
+
 export function activate(context: vscode.ExtensionContext) {
-  console.log('ReviewerBot extension is now active!');
+    console.log('ReviewerBot extension is now active!');
 
-  const backendClient = new BackendClient();
-  const codeLensProvider = new ReviewCodeLensProvider(backendClient);
+    // Initialize backend client
+    backendClient = new BackendClient();
 
-  // Register CodeLens provider
-  const selector = [
-    { language: 'go', scheme: 'file' },
-    { language: 'javascript', scheme: 'file' },
-    { language: 'typescript', scheme: 'file' },
-    { language: 'python', scheme: 'file' }
-  ];
+    // Register CodeLens provider
+    codeLensProvider = new ReviewCodeLensProvider(backendClient);
+    context.subscriptions.push(
+        vscode.languages.registerCodeLensProvider(
+            [
+                { language: 'go' },
+                { language: 'javascript' },
+                { language: 'typescript' },
+                { language: 'python' },
+                { language: 'dart' }
+            ],
+            codeLensProvider
+        )
+    );
 
-  context.subscriptions.push(
-    vscode.languages.registerCodeLensProvider(selector, codeLensProvider)
-  );
+    // Register commands
+    context.subscriptions.push(
+        vscode.commands.registerCommand('reviewer-bot.generateReviews', generateReviewsCommand),
+        vscode.commands.registerCommand('reviewer-bot.clearReviews', clearReviewsCommand),
+        vscode.commands.registerCommand('reviewer-bot.showReviewHistory', showReviewHistoryCommand),
+        vscode.commands.registerCommand('reviewer-bot.setApiKey', setApiKeyCommand),
+        vscode.commands.registerCommand('reviewer-bot.clearApiKey', clearApiKeyCommand),
+        vscode.commands.registerCommand('reviewer-bot.showConfig', showConfigCommand)
+    );
 
-  // Register command to generate reviews
-  let generateReviewsCommand = vscode.commands.registerCommand('reviewer-bot.generateReviews', async () => {
+    // Register auto-save handler
+    context.subscriptions.push(
+        vscode.workspace.onDidSaveTextDocument((document) => {
+            const config = backendClient.getConfig();
+            if (config.autoGenerateOnSave && backendClient.isLanguageSupported(document.languageId)) {
+                console.log(`Auto-generating reviews for ${document.fileName}`);
+                generateReviewsForDocument(document);
+            }
+        })
+    );
+}
+
+async function generateReviewsCommand() {
     const editor = vscode.window.activeTextEditor;
     if (!editor) {
-      vscode.window.showErrorMessage('No active text editor found.');
-      return;
+        vscode.window.showErrorMessage('No active editor found.');
+        return;
     }
 
-    const filePath = editor.document.uri.fsPath;
-    
-    // Check if language is supported
-    if (!backendClient.isLanguageSupported(filePath)) {
-      vscode.window.showErrorMessage('This file type is not supported for reviews.');
-      return;
+    await generateReviewsForDocument(editor.document);
+}
+
+async function generateReviewsForDocument(document: vscode.TextDocument) {
+    if (!backendClient.isLanguageSupported(document.languageId)) {
+        vscode.window.showErrorMessage(`Language '${document.languageId}' is not supported.`);
+        return;
     }
 
-    // Check if API key is configured
     const config = backendClient.getConfig();
-    if (!config.apiKey) {
-      vscode.window.showErrorMessage('Please configure your Gemini API key in settings.');
-      return;
-    }
-
+    
     try {
-      // Show progress
-      let reviewsResponse;
-      const config = backendClient.getConfig();
-      console.log('Generating reviews with style:', config.reviewStyle);
-      
-      await vscode.window.withProgress({
-        location: vscode.ProgressLocation.Notification,
-        title: "Generating reviews...",
-        cancellable: false
-      }, async (progress) => {
-        progress.report({ increment: 0 });
-
-        const fileContent = editor.document.getText();
-        reviewsResponse = await backendClient.generateReviews(filePath, fileContent);
-        
-        progress.report({ increment: 50 });
-        
-        // Store reviews in CodeLens provider
-        codeLensProvider.setReviews(filePath, reviewsResponse.reviews);
-        
-        progress.report({ increment: 100 });
-      });
-
-      vscode.window.showInformationMessage(`Generated ${reviewsResponse.reviews.length} reviews with ${config.reviewStyle} style!`);
+        await vscode.window.withProgress({
+            location: vscode.ProgressLocation.Notification,
+            title: "Generating reviews...",
+            cancellable: false
+        }, async (progress) => {
+            progress.report({ increment: 0 });
+            
+            const reviewsResponse = await backendClient.generateReviews(
+                document.fileName,
+                document.getText(),
+                config.reviewStyle
+            );
+            
+            progress.report({ increment: 100 });
+            
+            // Debug: Log the response structure
+            console.log('Backend response:', JSON.stringify(reviewsResponse, null, 2));
+            
+            if (reviewsResponse.Reviews && reviewsResponse.Reviews.length > 0) {
+                codeLensProvider.setReviews(document.fileName, reviewsResponse.Reviews);
+                vscode.window.showInformationMessage(`Generated ${reviewsResponse.Reviews.length} reviews!`);
+            } else {
+                vscode.window.showInformationMessage('No functions found to review.');
+            }
+        });
     } catch (error) {
-      console.error('Error generating reviews:', error);
-      vscode.window.showErrorMessage(`Failed to generate reviews: ${error instanceof Error ? error.message : 'Unknown error'}`);
+        console.error('Error generating reviews:', error);
+        const errorMessage = error instanceof Error ? error.message : String(error);
+        
+        // Show specific error messages for common issues
+        if (errorMessage.includes('API quota exceeded')) {
+            vscode.window.showErrorMessage('API quota exceeded. Please check your Gemini API plan or try again later.');
+        } else if (errorMessage.includes('Invalid API key')) {
+            vscode.window.showErrorMessage('Invalid API key. Please check your Gemini API key in settings.');
+        } else if (errorMessage.includes('Gemini API error')) {
+            vscode.window.showErrorMessage('Gemini API error. Please check your internet connection and try again.');
+        } else {
+            vscode.window.showErrorMessage(`Failed to generate reviews: ${errorMessage}`);
+        }
     }
-  });
+}
 
-  // Register command to clear reviews
-  let clearReviewsCommand = vscode.commands.registerCommand('reviewer-bot.clearReviews', () => {
+function clearReviewsCommand() {
     const editor = vscode.window.activeTextEditor;
-    if (editor) {
-      const filePath = editor.document.uri.fsPath;
-      codeLensProvider.clearReviews(filePath);
-      vscode.window.showInformationMessage('Reviews cleared!');
-    } else {
-      vscode.window.showErrorMessage('No active text editor found.');
+    if (!editor) {
+        vscode.window.showErrorMessage('No active editor found.');
+        return;
     }
-  });
 
-  // Register command to show review history
-  let showReviewHistoryCommand = vscode.commands.registerCommand('reviewer-bot.showReviewHistory', (functionName: string) => {
+    codeLensProvider.clearReviews(editor.document.fileName);
+    vscode.window.showInformationMessage('Reviews cleared!');
+}
+
+function showReviewHistoryCommand(functionName: string) {
     const history = codeLensProvider.getReviewHistory(functionName);
-    if (history.length > 0) {
-      vscode.window.showQuickPick(history.slice().reverse(), {
-        title: `Review History: ${functionName}`,
-        placeHolder: 'Select a review to view',
-      }).then(selected => {
-        if (selected) {
-          vscode.window.showInformationMessage(`Selected review: ${selected}`);
-        }
-      });
-    } else {
-      vscode.window.showInformationMessage(`No review history for ${functionName}`);
+    if (history.length === 0) {
+        vscode.window.showInformationMessage(`No review history for function '${functionName}'`);
+        return;
     }
-  });
 
-  // Register command to set API key
-  let setApiKeyCommand = vscode.commands.registerCommand('reviewer-bot.setApiKey', async () => {
+    vscode.window.showQuickPick(history, {
+        placeHolder: `Review history for ${functionName}`,
+        title: `Review History: ${functionName}`
+    });
+}
+
+async function setApiKeyCommand() {
     const apiKey = await vscode.window.showInputBox({
-      prompt: 'Enter your Gemini API Key',
-      password: true,
-      placeHolder: 'AIza...',
-      validateInput: (value) => {
-        if (!value || value.trim().length === 0) {
-          return 'API key cannot be empty';
-        }
-        if (!value.startsWith('AIza')) {
-          return 'API key should start with "AIza"';
-        }
-        return null;
-      }
+        prompt: 'Enter your Gemini API Key',
+        password: true,
+        placeHolder: 'sk-...'
     });
 
-    if (apiKey) {
-      await vscode.workspace.getConfiguration('reviewerBot').update('apiKey', apiKey, vscode.ConfigurationTarget.Global);
-      backendClient.reloadConfig();
-      vscode.window.showInformationMessage('Gemini API Key saved successfully!');
+    if (apiKey !== undefined) {
+        await vscode.workspace.getConfiguration('reviewerBot').update('apiKey', apiKey, vscode.ConfigurationTarget.Global);
+        backendClient.reloadConfig();
+        vscode.window.showInformationMessage('API key set successfully!');
     }
-  });
+}
 
-  // Register command to clear API key
-  let clearApiKeyCommand = vscode.commands.registerCommand('reviewer-bot.clearApiKey', async () => {
-    const result = await vscode.window.showWarningMessage(
-      'Are you sure you want to clear your Gemini API Key?',
-      { modal: true },
-      'Yes, Clear It'
-    );
+async function clearApiKeyCommand() {
+    await vscode.workspace.getConfiguration('reviewerBot').update('apiKey', '', vscode.ConfigurationTarget.Global);
+    backendClient.reloadConfig();
+    vscode.window.showInformationMessage('API key cleared!');
+}
 
-    if (result === 'Yes, Clear It') {
-      await vscode.workspace.getConfiguration('reviewerBot').update('apiKey', '', vscode.ConfigurationTarget.Global);
-      backendClient.reloadConfig();
-      vscode.window.showInformationMessage('Gemini API Key cleared. Mock mode will be used.');
-    }
-  });
-
-  // Register command to show current configuration
-  let showConfigCommand = vscode.commands.registerCommand('reviewer-bot.showConfig', () => {
+function showConfigCommand() {
     const config = backendClient.getConfig();
-    const hasApiKey = config.apiKey ? 'Yes (starts with ' + config.apiKey.substring(0, 10) + '...)' : 'No (using mock mode)';
+    const message = `Current Configuration:
+• API Key: ${config.apiKey ? 'Set' : 'Not set'}
+• Review Style: ${config.reviewStyle}
+• Auto-generate on Save: ${config.autoGenerateOnSave ? 'Enabled' : 'Disabled'}
+• Enabled Languages: ${config.enabledLanguages.join(', ')}`;
     
-    vscode.window.showInformationMessage(
-      `ReviewerBot Configuration:
-      • API Key: ${hasApiKey}
-      • Review Style: ${config.reviewStyle}
-      • Auto-generate on Save: ${config.autoGenerateOnSave ? 'Enabled' : 'Disabled'}
-      • Supported Languages: ${config.enabledLanguages.join(', ')}`
-    );
-  });
-
-  // Handle auto-generation on save
-  let saveListener = vscode.workspace.onDidSaveTextDocument(async (document) => {
-    const config = backendClient.getConfig();
-    console.log('Auto-generate on save:', config.autoGenerateOnSave);
-    
-    if (!config.autoGenerateOnSave) {
-      console.log('Auto-generate disabled, skipping');
-      return;
-    }
-
-    const filePath = document.uri.fsPath;
-    console.log('File saved:', filePath);
-    
-    if (!backendClient.isLanguageSupported(filePath)) {
-      console.log('Language not supported:', filePath);
-      return;
-    }
-
-    console.log('Generating reviews for saved file...');
-    try {
-      const fileContent = document.getText();
-      const reviewsResponse = await backendClient.generateReviews(filePath, fileContent);
-      codeLensProvider.setReviews(filePath, reviewsResponse.reviews);
-      console.log('Auto-generated reviews:', reviewsResponse.reviews.length);
-    } catch (error) {
-      console.error('Error auto-generating reviews on save:', error);
-      // Don't show error for auto-generation to avoid spam
-    }
-  });
-
-  // Handle configuration changes
-  let configListener = vscode.workspace.onDidChangeConfiguration((event) => {
-    if (event.affectsConfiguration('reviewerBot')) {
-      backendClient.reloadConfig();
-    }
-  });
-
-  // Context subscriptions
-  context.subscriptions.push(
-    generateReviewsCommand,
-    clearReviewsCommand,
-    showReviewHistoryCommand,
-    setApiKeyCommand,
-    clearApiKeyCommand,
-    showConfigCommand,
-    saveListener,
-    configListener
-  );
+    vscode.window.showInformationMessage(message);
 }
 
 export function deactivate() {
-  console.log('ReviewerBot extension is now deactivated!');
+    console.log('ReviewerBot extension is now deactivated!');
 } 

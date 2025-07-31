@@ -16,6 +16,25 @@ An AI-powered VS Code extension that generates one-liner reviews above function 
 - **CodeLens Integration**: Reviews appear as clickable CodeLens above functions
 - **Mock Mode**: Test without API calls
 
+## 📸 Screenshots & Demo
+
+### 🎬 Demo
+![ReviewerBot Demo](https://raw.githubusercontent.com/master-wayne7/reviewer-bot/master/screenshots/demo.gif)
+
+### 📱 Screenshots by Language
+
+#### 🐍 Python
+![Python Support](https://raw.githubusercontent.com/master-wayne7/reviewer-bot/master/screenshots/python.png)
+
+#### 🟢 Go
+![Go Support](https://raw.githubusercontent.com/master-wayne7/reviewer-bot/master/screenshots/go.png)
+
+#### 🟡 JavaScript
+![JavaScript Support](https://raw.githubusercontent.com/master-wayne7/reviewer-bot/master/screenshots/javascript.png)
+
+#### 🎯 Dart
+![Dart Support](https://raw.githubusercontent.com/master-wayne7/reviewer-bot/master/screenshots/dart.png)
+
 ## 🏗️ Architecture
 
 ReviewerBot consists of two main components:
@@ -24,7 +43,7 @@ ReviewerBot consists of two main components:
 - **Function Parser**: Detects function definitions using regex patterns
 - **Gemini Integration**: Connects to Gemini 2.0 Flash API
 - **Review Generator**: Formats reviews with star ratings
-- **HTTP Server**: REST API for VS Code extension
+- **Direct Communication**: Called directly by VS Code extension via stdin/stdout
 - **Mock Mode**: Fallback reviews when API is unavailable
 
 ### 2. VS Code Extension (`/extension`)
@@ -54,7 +73,7 @@ go build -o reviewer-bot.exe main.go
 export GEMINI_API_KEY="your-api-key-here"
 ```
 
-The Go executable will be called directly by the extension.
+The Go executable will be called directly by the extension via stdin/stdout communication.
 
 ### 2. Setup VS Code Extension
 
@@ -250,19 +269,19 @@ MIT License - see LICENSE file for details
 ## 🐛 Troubleshooting
 
 ### Backend Issues
-- **Port already in use**: Change `PORT` environment variable
+- **Executable not found**: Ensure `reviewer-bot.exe` is in workspace root
 - **API key invalid**: Verify your Gemini API key
-- **Network errors**: Check firewall settings
+- **Permission errors**: Check file permissions for executable
 
 ### Extension Issues
-- **Backend not found**: Ensure Go backend is running
+- **Backend not found**: Ensure Go executable is in workspace root
 - **No reviews generated**: Check file type support
 - **Configuration errors**: Verify settings in VS Code
 
 ### Common Solutions
 1. Restart VS Code after configuration changes
-2. Check browser console for error messages
-3. Verify backend is accessible at configured URL
+2. Check Developer Tools console for error messages
+3. Verify Go executable is in workspace root
 4. Test with mock mode first
 
 ---

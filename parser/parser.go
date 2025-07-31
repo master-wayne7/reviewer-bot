@@ -40,13 +40,13 @@ func (p *GoParser) ParseFunctions(content string) []types.FunctionInfo {
 	// Regex for Go function definitions
 	// Matches: func FunctionName(params) returnType {
 	// Also handles methods: func (receiver) MethodName(params) returnType {
-	goFuncRegex := regexp.MustCompile(`^func\s+(?:\([^)]+\)\s+)?([a-zA-Z_][a-zA-Z0-9_]*)\s*\([^)]*\)\s*(?:[^{]*)?\s*\{`)
+	goFuncRegex := regexp.MustCompile(`^\s*func\s+(?:\([^)]+\)\s+)?([a-zA-Z_][a-zA-Z0-9_]*)\s*\([^)]*\)\s*(?:[^{]*)?\s*\{`)
 
 	scanner := bufio.NewScanner(strings.NewReader(content))
 	lineNum := 1
 
 	for scanner.Scan() {
-		line := strings.TrimSpace(scanner.Text())
+		line := scanner.Text() // Don't trim, keep original indentation
 		if matches := goFuncRegex.FindStringSubmatch(line); matches != nil {
 			functions = append(functions, types.FunctionInfo{
 				Name:     matches[1],
@@ -67,22 +67,22 @@ func (p *JavaScriptParser) ParseFunctions(content string) []types.FunctionInfo {
 	// Regex for various JavaScript function patterns
 	patterns := []*regexp.Regexp{
 		// function name(params) {
-		regexp.MustCompile(`^function\s+([a-zA-Z_$][a-zA-Z0-9_$]*)\s*\([^)]*\)\s*\{`),
+		regexp.MustCompile(`^\s*function\s+([a-zA-Z_$][a-zA-Z0-9_$]*)\s*\([^)]*\)\s*\{`),
 		// const name = (params) => {
-		regexp.MustCompile(`^const\s+([a-zA-Z_$][a-zA-Z0-9_$]*)\s*=\s*\([^)]*\)\s*=>\s*\{`),
+		regexp.MustCompile(`^\s*const\s+([a-zA-Z_$][a-zA-Z0-9_$]*)\s*=\s*\([^)]*\)\s*=>\s*\{`),
 		// let name = (params) => {
-		regexp.MustCompile(`^let\s+([a-zA-Z_$][a-zA-Z0-9_$]*)\s*=\s*\([^)]*\)\s*=>\s*\{`),
+		regexp.MustCompile(`^\s*let\s+([a-zA-Z_$][a-zA-Z0-9_$]*)\s*=\s*\([^)]*\)\s*=>\s*\{`),
 		// var name = (params) => {
-		regexp.MustCompile(`^var\s+([a-zA-Z_$][a-zA-Z0-9_$]*)\s*=\s*\([^)]*\)\s*=>\s*\{`),
+		regexp.MustCompile(`^\s*var\s+([a-zA-Z_$][a-zA-Z0-9_$]*)\s*=\s*\([^)]*\)\s*=>\s*\{`),
 		// name(params) {
-		regexp.MustCompile(`^([a-zA-Z_$][a-zA-Z0-9_$]*)\s*\([^)]*\)\s*\{`),
+		regexp.MustCompile(`^\s*([a-zA-Z_$][a-zA-Z0-9_$]*)\s*\([^)]*\)\s*\{`),
 	}
 
 	scanner := bufio.NewScanner(strings.NewReader(content))
 	lineNum := 1
 
 	for scanner.Scan() {
-		line := strings.TrimSpace(scanner.Text())
+		line := scanner.Text() // Don't trim, keep original indentation
 
 		for _, pattern := range patterns {
 			if matches := pattern.FindStringSubmatch(line); matches != nil {
@@ -109,13 +109,13 @@ func (p *PythonParser) ParseFunctions(content string) []types.FunctionInfo {
 
 	// Regex for Python function definitions
 	// Matches: def function_name(params):
-	pythonFuncRegex := regexp.MustCompile(`^def\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\([^)]*\)\s*:`)
+	pythonFuncRegex := regexp.MustCompile(`^\s*def\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\([^)]*\)\s*:`)
 
 	scanner := bufio.NewScanner(strings.NewReader(content))
 	lineNum := 1
 
 	for scanner.Scan() {
-		line := strings.TrimSpace(scanner.Text())
+		line := scanner.Text() // Don't trim, keep original indentation
 		if matches := pythonFuncRegex.FindStringSubmatch(line); matches != nil {
 			functions = append(functions, types.FunctionInfo{
 				Name:     matches[1],
@@ -186,21 +186,51 @@ func (p *CppParser) ParseFunctions(content string) []types.FunctionInfo {
 func (p *DartParser) ParseFunctions(content string) []types.FunctionInfo {
 	var functions []types.FunctionInfo
 
-	// Regex for Dart function definitions
-	// Matches: return_type function_name(params) {
-	dartFuncRegex := regexp.MustCompile(`^[a-zA-Z_][a-zA-Z0-9_<>]*\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\([^)]*\)\s*\{`)
+	// Multiple regex patterns for Dart function definitions
+	patterns := []*regexp.Regexp{
+		// Regular functions: return_type function_name(params) {
+		regexp.MustCompile(`^\s*[a-zA-Z_][a-zA-Z0-9_<>]*\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\([^)]*\)\s*\{`),
+		// Future functions: Future<type> function_name(params) {
+		regexp.MustCompile(`^\s*Future<[^>]*>\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\([^)]*\)\s*\{`),
+		// Async functions: return_type function_name(params) async {
+		regexp.MustCompile(`^\s*[a-zA-Z_][a-zA-Z0-9_<>]*\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\([^)]*\)\s*async\s*\{`),
+		// Future async functions: Future<type> function_name(params) async {
+		regexp.MustCompile(`^\s*Future<[^>]*>\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\([^)]*\)\s*async\s*\{`),
+		// Complex Future types with nested generics: Future<Map<String,List<int>>> function_name(params) async {
+		regexp.MustCompile(`^\s*Future<[^<]*<[^>]*>>\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\([^)]*\)\s*async\s*\{`),
+		// Complex Future types without async: Future<Map<String,List<int>>> function_name(params) {
+		regexp.MustCompile(`^\s*Future<[^<]*<[^>]*>>\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\([^)]*\)\s*\{`),
+		// More complex nested generics: Future<List<Map<String, dynamic>>> function_name(params) async {
+		regexp.MustCompile(`^\s*Future<[^<]*<[^<]*<[^>]*>>>\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\([^)]*\)\s*async\s*\{`),
+		// More complex nested generics without async: Future<List<Map<String, dynamic>>> function_name(params) {
+		regexp.MustCompile(`^\s*Future<[^<]*<[^<]*<[^>]*>>>\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\([^)]*\)\s*\{`),
+		// Most complex nested generics: Future<Map<String, Future<List<int>>>> function_name(params) async {
+		regexp.MustCompile(`^\s*Future<[^<]*<[^<]*<[^<]*<[^>]*>>>>\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\([^)]*\)\s*async\s*\{`),
+		// Most complex nested generics without async: Future<Map<String, Future<List<int>>>> function_name(params) {
+		regexp.MustCompile(`^\s*Future<[^<]*<[^<]*<[^<]*<[^>]*>>>>\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\([^)]*\)\s*\{`),
+		// More comprehensive nested generics patterns
+		regexp.MustCompile(`^\s*Future<[^<]*<[^<]*<[^<]*<[^<]*<[^>]*>>>>>\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\([^)]*\)\s*async\s*\{`),
+		regexp.MustCompile(`^\s*Future<[^<]*<[^<]*<[^<]*<[^<]*<[^>]*>>>>>\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\([^)]*\)\s*\{`),
+		// Generic patterns for any level of nesting
+		regexp.MustCompile(`^\s*Future<[^>]*>\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\([^)]*\)\s*async\s*\{`),
+		regexp.MustCompile(`^\s*Future<[^>]*>\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\([^)]*\)\s*\{`),
+	}
 
 	scanner := bufio.NewScanner(strings.NewReader(content))
 	lineNum := 1
 
 	for scanner.Scan() {
-		line := strings.TrimSpace(scanner.Text())
-		if matches := dartFuncRegex.FindStringSubmatch(line); matches != nil {
-			functions = append(functions, types.FunctionInfo{
-				Name:     matches[1],
-				Line:     lineNum,
-				Language: "dart",
-			})
+		line := scanner.Text() // Don't trim, keep original indentation
+
+		for _, pattern := range patterns {
+			if matches := pattern.FindStringSubmatch(line); matches != nil {
+				functions = append(functions, types.FunctionInfo{
+					Name:     matches[1],
+					Line:     lineNum,
+					Language: "dart",
+				})
+				break // Found a match, move to next line
+			}
 		}
 		lineNum++
 	}
@@ -245,14 +275,8 @@ func GetParser(filePath string) Parser {
 		return &JavaScriptParser{}
 	case strings.HasSuffix(lowerPath, ".py"):
 		return &PythonParser{}
-	case strings.HasSuffix(lowerPath, ".c"):
-		return &CParser{}
-	case strings.HasSuffix(lowerPath, ".cpp") || strings.HasSuffix(lowerPath, ".cc") || strings.HasSuffix(lowerPath, ".cxx") || strings.HasSuffix(lowerPath, ".h") || strings.HasSuffix(lowerPath, ".hpp"):
-		return &CppParser{}
 	case strings.HasSuffix(lowerPath, ".dart"):
 		return &DartParser{}
-	case strings.HasSuffix(lowerPath, ".java"):
-		return &JavaParser{}
 	default:
 		// Default to JavaScript parser for unknown extensions
 		return &JavaScriptParser{}

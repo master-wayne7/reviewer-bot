@@ -83,55 +83,88 @@ export class ReviewCodeLensProvider implements vscode.CodeLensProvider {
         const lenses: vscode.CodeLens[] = [];
         const filePath = document.uri.fsPath;
         const fileReviews = this.reviews.get(filePath) || [];
-
-        // Create a map of line numbers to reviews for quick lookup
+    
+        console.log(`CodeLens: Processing file ${filePath}`);
+        console.log(`CodeLens: Language ID: ${document.languageId}`);
+        console.log(`CodeLens: Found ${fileReviews.length} reviews for this file`);
+    
+        // Map line numbers to reviews
         const reviewsByLine = new Map<number, Review>();
         for (const review of fileReviews) {
             reviewsByLine.set(review.line, review);
+            console.log(`CodeLens: Available review for '${review.function}' at line ${review.line}: ${review.stars} ${review.review}`);
         }
-
-        // Function detection patterns for different languages
+    
         const patterns = this.getFunctionPatterns(document.languageId);
-        
+        console.log(`CodeLens: Using ${patterns.length} patterns for language ${document.languageId}`);
+    
+        const processedFunctions = new Set<string>();
+        const text = document.getText();
+    
         for (const pattern of patterns) {
             const regex = new RegExp(pattern.regex, 'gm');
-            const text = document.getText();
             let match: RegExpExecArray | null;
-
+    
             while ((match = regex.exec(text))) {
-                const line = document.positionAt(match.index).line;
                 const functionName = pattern.extractName(match);
-                
-                if (functionName) {
-                    const range = new vscode.Range(line, 0, line, 0);
-                    const review = reviewsByLine.get(line + 1); // Convert to 1-based line number
-                    
-                    let title = '';
-                    if (review) {
-                        title = `${review.stars} ${review.review}`;
+                if (!functionName) continue;
+    
+                const matchText = match[0];
+                const fullMatchStart = match.index;
+    
+                // Try to find more precise line of function name
+                let functionLine = document.positionAt(fullMatchStart).line;
+                const offsetInMatch = matchText.indexOf(functionName);
+                if (offsetInMatch !== -1) {
+                    const absoluteIndex = fullMatchStart + offsetInMatch;
+                    functionLine = document.positionAt(absoluteIndex).line;
+                }
+    
+                const functionKey = `${functionName}:${functionLine}`;
+                if (processedFunctions.has(functionKey)) {
+                    console.log(`CodeLens: Skipping duplicate function '${functionName}' at line ${functionLine}`);
+                    continue;
+                }
+    
+                processedFunctions.add(functionKey);
+                console.log(`CodeLens: Found function '${functionName}' at line ${functionLine}`);
+    
+                const range = new vscode.Range(functionLine, 0, functionLine, 0);
+                const review = reviewsByLine.get(functionLine);
+    
+                let title = '';
+                if (review) {
+                    console.log(`CodeLens: Found review for function '${functionName}' at line ${functionLine}`);
+                    title = `${review.stars} ${review.review}`;
+                } else {
+                    console.log(`CodeLens: No review found for function '${functionName}' at line ${functionLine}`);
+                    const reviewByName = fileReviews.find(r => r.function === functionName);
+                    if (reviewByName) {
+                        console.log(`CodeLens: Found review by name '${functionName}' at line ${reviewByName.line}`);
+                        title = `${reviewByName.stars} ${reviewByName.review}`;
                     } else {
-                        // Generate a default review if none exists
                         title = this.generateDefaultReview(functionName);
                     }
-
-                    lenses.push(new vscode.CodeLens(range, {
-                        title: title,
-                        command: 'reviewer-bot.showReviewHistory',
-                        arguments: [functionName],
-                        tooltip: `Review for ${functionName}`
-                    }));
                 }
+    
+                lenses.push(new vscode.CodeLens(range, {
+                    title: title,
+                    command: 'reviewer-bot.showReviewHistory',
+                    arguments: [functionName],
+                    tooltip: `Review for ${functionName}`
+                }));
             }
         }
-
+    
         return lenses;
     }
+    
 
     private getFunctionPatterns(languageId: string): Array<{regex: string, extractName: (match: RegExpExecArray) => string | null}> {
         switch (languageId) {
             case 'go':
                 return [{
-                    regex: `^func\\s+(?:\\([^)]+\\)\\s+)?([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\([^)]*\\)\\s*(?:[^{]*)?\\s*\\{`,
+                    regex: `^\\s*func\\s+(?:\\([^)]+\\)\\s+)?([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\([^)]*\\)\\s*(?:[^{]*)?\\s*\\{`,
                     extractName: (match) => match[1] || null
                 }];
             
@@ -139,15 +172,15 @@ export class ReviewCodeLensProvider implements vscode.CodeLensProvider {
             case 'typescript':
                 return [
                     {
-                        regex: `^function\\s+([a-zA-Z_$][a-zA-Z0-9_$]*)\\s*\\([^)]*\\)\\s*\\{`,
+                        regex: `^\\s*function\\s+([a-zA-Z_$][a-zA-Z0-9_$]*)\\s*\\([^)]*\\)\\s*\\{`,
                         extractName: (match) => match[1] || null
                     },
                     {
-                        regex: `^(?:const|let|var)\\s+([a-zA-Z_$][a-zA-Z0-9_$]*)\\s*=\\s*\\([^)]*\\)\\s*=>\\s*\\{`,
+                        regex: `^\\s*(?:const|let|var)\\s+([a-zA-Z_$][a-zA-Z0-9_$]*)\\s*=\\s*\\([^)]*\\)\\s*=>\\s*\\{`,
                         extractName: (match) => match[1] || null
                     },
                     {
-                        regex: `^([a-zA-Z_$][a-zA-Z0-9_$]*)\\s*\\([^)]*\\)\\s*\\{`,
+                        regex: `^\\s*([a-zA-Z_$][a-zA-Z0-9_$]*)\\s*\\([^)]*\\)\\s*\\{`,
                         extractName: (match) => {
                             // Skip if it's likely a method call or other non-function
                             const line = match[0];
@@ -161,7 +194,7 @@ export class ReviewCodeLensProvider implements vscode.CodeLensProvider {
             
             case 'python':
                 return [{
-                    regex: `^def\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\([^)]*\\)\\s*:`,
+                    regex: `^\\s*def\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\([^)]*\\)\\s*:`,
                     extractName: (match) => match[1] || null
                 }];
 
@@ -192,11 +225,61 @@ export class ReviewCodeLensProvider implements vscode.CodeLensProvider {
             case 'dart':
                 return [
                     {
-                        regex: `^[a-zA-Z_][a-zA-Z0-9_<>]*\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\([^)]*\\)\\s*\\{`,
+                        regex: `^\\s*[a-zA-Z_][a-zA-Z0-9_<>]*\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\([^)]*\\)\\s*\\{`,
                         extractName: (match) => match[1] || null
                     },
                     {
-                        regex: `^([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\([^)]*\\)\\s*\\{`,
+                        regex: `^\\s*Future<[^>]*>\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\([^)]*\\)\\s*\\{`,
+                        extractName: (match) => match[1] || null
+                    },
+                    {
+                        regex: `^\\s*[a-zA-Z_][a-zA-Z0-9_<>]*\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\([^)]*\\)\\s*async\\s*\\{`,
+                        extractName: (match) => match[1] || null
+                    },
+                    {
+                        regex: `^\\s*Future<[^>]*>\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\([^)]*\\)\\s*async\\s*\\{`,
+                        extractName: (match) => match[1] || null
+                    },
+                    {
+                        regex: `^\\s*Future<[^<]*<[^>]*>>\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\([^)]*\\)\\s*async\\s*\\{`,
+                        extractName: (match) => match[1] || null
+                    },
+                    {
+                        regex: `^\\s*Future<[^<]*<[^>]*>>\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\([^)]*\\)\\s*\\{`,
+                        extractName: (match) => match[1] || null
+                    },
+                    {
+                        regex: `^\\s*Future<[^<]*<[^<]*<[^>]*>>>\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\([^)]*\\)\\s*async\\s*\\{`,
+                        extractName: (match) => match[1] || null
+                    },
+                    {
+                        regex: `^\\s*Future<[^<]*<[^<]*<[^>]*>>>\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\([^)]*\\)\\s*\\{`,
+                        extractName: (match) => match[1] || null
+                    },
+                    {
+                        regex: `^\\s*Future<[^<]*<[^<]*<[^<]*<[^>]*>>>>\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\([^)]*\\)\\s*async\\s*\\{`,
+                        extractName: (match) => match[1] || null
+                    },
+                    {
+                        regex: `^\\s*Future<[^<]*<[^<]*<[^<]*<[^>]*>>>>\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\([^)]*\\)\\s*\\{`,
+                        extractName: (match) => match[1] || null
+                    },
+                    // More comprehensive nested generics patterns
+                    {
+                        regex: `^\\s*Future<[^<]*<[^<]*<[^<]*<[^<]*<[^>]*>>>>>\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\([^)]*\\)\\s*async\\s*\\{`,
+                        extractName: (match) => match[1] || null
+                    },
+                    {
+                        regex: `^\\s*Future<[^<]*<[^<]*<[^<]*<[^<]*<[^>]*>>>>>\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\([^)]*\\)\\s*\\{`,
+                        extractName: (match) => match[1] || null
+                    },
+                    // Generic patterns for any level of nesting
+                    {
+                        regex: `^\\s*Future<[^>]*>\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\([^)]*\\)\\s*async\\s*\\{`,
+                        extractName: (match) => match[1] || null
+                    },
+                    {
+                        regex: `^\\s*Future<[^>]*>\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\([^)]*\\)\\s*\\{`,
                         extractName: (match) => match[1] || null
                     }
                 ];
@@ -260,4 +343,4 @@ export class ReviewCodeLensProvider implements vscode.CodeLensProvider {
         
         return `${stars} ${review}`;
     }
-} 
+}

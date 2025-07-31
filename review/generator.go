@@ -1,6 +1,7 @@
 package review
 
 import (
+	"fmt"
 	"regexp"
 	"reviewer-bot/gemini"
 	"reviewer-bot/parser"
@@ -103,23 +104,88 @@ func (g *Generator) GenerateReviews(filePath, fileContent, style string) (*types
 		}, nil
 	}
 
+	// If only one function, use single API call
+	if len(functions) == 1 {
+		return g.generateSingleReview(functions[0], fileContent, style)
+	}
+
+	// For multiple functions, try batch API call first, fallback to individual calls
+	reviews, err := g.generateBatchReviews(functions, fileContent, style)
+	if err != nil {
+		// Fallback to individual calls
+		return g.generateIndividualReviews(functions, fileContent, style)
+	}
+
+	return &types.ReviewResponse{
+		File:    filePath,
+		Reviews: reviews,
+	}, nil
+}
+
+// generateSingleReview generates a review for a single function
+func (g *Generator) generateSingleReview(function types.FunctionInfo, fileContent, style string) (*types.ReviewResponse, error) {
+	functionCode := ExtractFunctionCode(fileContent, function.Line)
+	reviewText, err := g.geminiClient.GenerateReview(function.Name, functionCode, style)
+	if err != nil {
+		reviewText = g.generateFallbackReview(function.Name, style)
+	}
+
+	stars, cleanReviewText := ExtractStarRating(reviewText)
+	review := types.Review{
+		Line:     function.Line,
+		Function: function.Name,
+		Style:    style,
+		Review:   cleanReviewText,
+		Stars:    stars,
+	}
+
+	return &types.ReviewResponse{
+		File:    "test.go", // This will be overridden
+		Reviews: []types.Review{review},
+	}, nil
+}
+
+// generateBatchReviews attempts to generate all reviews in a single API call
+func (g *Generator) generateBatchReviews(functions []types.FunctionInfo, fileContent, style string) ([]types.Review, error) {
+	// Create a batch prompt with all functions
+	var batchPrompt strings.Builder
+	batchPrompt.WriteString(fmt.Sprintf("Review these functions in %s style. Provide one review per function:\n\n", style))
+
+	for _, function := range functions {
+		functionCode := ExtractFunctionCode(fileContent, function.Line)
+		batchPrompt.WriteString(fmt.Sprintf("Function: %s\nCode:\n%s\n\n", function.Name, functionCode))
+	}
+
+	batchPrompt.WriteString("Provide reviews in this format:\n")
+	batchPrompt.WriteString("FUNCTION_NAME: ⭐⭐⭐⭐⭐ Review text here\n")
+
+	// Try batch API call
+	reviewText, err := g.geminiClient.GenerateBatchReview(batchPrompt.String(), style)
+	if err != nil {
+		return nil, err
+	}
+
+	// Parse batch response
+	reviews, err := g.parseBatchResponse(reviewText, functions)
+	if err != nil {
+		return nil, err
+	}
+
+	return reviews, nil
+}
+
+// generateIndividualReviews generates reviews one by one (fallback)
+func (g *Generator) generateIndividualReviews(functions []types.FunctionInfo, fileContent, style string) (*types.ReviewResponse, error) {
 	var reviews []types.Review
 
 	for _, function := range functions {
-		// Extract function code
 		functionCode := ExtractFunctionCode(fileContent, function.Line)
-
-		// Generate review using Gemini
 		reviewText, err := g.geminiClient.GenerateReview(function.Name, functionCode, style)
 		if err != nil {
-			// If Gemini fails, use a fallback review
 			reviewText = g.generateFallbackReview(function.Name, style)
 		}
 
-		// Extract star rating from AI response and clean the review text
 		stars, cleanReviewText := ExtractStarRating(reviewText)
-
-		// Create review
 		review := types.Review{
 			Line:     function.Line,
 			Function: function.Name,
@@ -132,9 +198,70 @@ func (g *Generator) GenerateReviews(filePath, fileContent, style string) (*types
 	}
 
 	return &types.ReviewResponse{
-		File:    filePath,
+		File:    "test.go", // This will be overridden
 		Reviews: reviews,
 	}, nil
+}
+
+// parseBatchResponse parses the batch API response
+func (g *Generator) parseBatchResponse(responseText string, functions []types.FunctionInfo) ([]types.Review, error) {
+	var reviews []types.Review
+
+	lines := strings.Split(responseText, "\n")
+	for _, line := range lines {
+		line = strings.TrimSpace(line)
+		if line == "" {
+			continue
+		}
+
+		// Look for pattern: FUNCTION_NAME: ⭐⭐⭐⭐⭐ Review text
+		parts := strings.SplitN(line, ":", 2)
+		if len(parts) != 2 {
+			continue
+		}
+
+		functionName := strings.TrimSpace(parts[0])
+		reviewPart := strings.TrimSpace(parts[1])
+
+		// Handle mock responses with generic function names (Function1, Function2, etc.)
+		if strings.HasPrefix(functionName, "Function") {
+			// Extract the number from FunctionX
+			var functionIndex int
+			fmt.Sscanf(functionName, "Function%d", &functionIndex)
+
+			// Map to actual function by index (1-based to 0-based)
+			if functionIndex > 0 && functionIndex <= len(functions) {
+				actualFunction := functions[functionIndex-1]
+				stars, cleanReviewText := ExtractStarRating(reviewPart)
+				review := types.Review{
+					Line:     actualFunction.Line,
+					Function: actualFunction.Name,
+					Style:    "funny", // Default style
+					Review:   cleanReviewText,
+					Stars:    stars,
+				}
+				reviews = append(reviews, review)
+			}
+		} else {
+			// Find matching function by name
+			for _, function := range functions {
+				if function.Name == functionName {
+					stars, cleanReviewText := ExtractStarRating(reviewPart)
+					review := types.Review{
+						Line:     function.Line,
+						Function: function.Name,
+						Style:    "funny", // Default style
+						Review:   cleanReviewText,
+						Stars:    stars,
+					}
+					reviews = append(reviews, review)
+					break
+				}
+			}
+		}
+	}
+
+	return reviews, nil
 }
 
 // generateFallbackReview generates a fallback review when Gemini is unavailable

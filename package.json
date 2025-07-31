@@ -1,8 +1,22 @@
 {
     "name": "reviewer-bot",
-    "displayName": "ReviewerBot",
+    "displayName": "Reviewer Bot",
+    "publisher": "master-wayne7",
     "description": "AI-powered code reviews with style! Generate one-liner reviews above function definitions using Gemini 2.0 Flash.",
-    "version": "0.1.0",
+    "version": "1.0.0",
+    "icon": "icon.png",
+    "keywords": [
+        "ai",
+        "review",
+        "code",
+        "gemini",
+        "codelens",
+        "reviewerbot",
+        "automation",
+        "lint",
+        "function",
+        "vscode"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/master-wayne7/reviewer-bot.git"
@@ -90,10 +104,7 @@
                         "javascript",
                         "typescript",
                         "python",
-                        "c",
-                        "cpp",
-                        "dart",
-                        "java"
+                        "dart"
                     ],
                     "description": "Programming languages to generate reviews for"
                 }
