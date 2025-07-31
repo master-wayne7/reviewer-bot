@@ -19,21 +19,21 @@ An AI-powered VS Code extension that generates one-liner reviews above function 
 ## 📸 Screenshots & Demo
 
 ### 🎬 Demo
-![ReviewerBot Demo](https://raw.githubusercontent.com/master-wayne7/reviewer-bot/master/screenshots/demo.gif)
+![ReviewerBot Demo](https://raw.githubusercontent.com/master-wayne7/reviewer-bot/refs/heads/master/screenshots/demo.gif)
 
 ### 📱 Screenshots by Language
 
 #### 🐍 Python
-![Python Support](https://raw.githubusercontent.com/master-wayne7/reviewer-bot/master/screenshots/python.png)
+![Python Support](https://raw.githubusercontent.com/master-wayne7/reviewer-bot/refs/heads/master/screenshots/python.png)
 
 #### 🟢 Go
-![Go Support](https://raw.githubusercontent.com/master-wayne7/reviewer-bot/master/screenshots/go.png)
+![Go Support](https://raw.githubusercontent.com/master-wayne7/reviewer-bot/refs/heads/master/screenshots/go.png)
 
 #### 🟡 JavaScript
-![JavaScript Support](https://raw.githubusercontent.com/master-wayne7/reviewer-bot/master/screenshots/javascript.png)
+![JavaScript Support](https://raw.githubusercontent.com/master-wayne7/reviewer-bot/refs/heads/master/screenshots/javascript.png)
 
 #### 🎯 Dart
-![Dart Support](https://raw.githubusercontent.com/master-wayne7/reviewer-bot/master/screenshots/dart.png)
+![Dart Support](https://raw.githubusercontent.com/master-wayne7/reviewer-bot/refs/heads/master/screenshots/dart.png)
 
 ## 🏗️ Architecture
 
